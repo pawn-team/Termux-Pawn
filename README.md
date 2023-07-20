@@ -9,11 +9,14 @@ termux-setup-storage
 ```
 
 ## 2- Passo
-clonar esse repositorio e executar o script
+clonar esse repositorio e construír o compilador
 ```bsh
 pkg i git -y
 git clone https://github.com/device-black/termux-pawn
-cd termux-pawn && chmod +x install.bsh && ./install.bsh
+mv termux-pawn/pawn-lang /sdcard/
+pkg i x11-repo tur-repo -y && pkg upd -y && pkg upg -y
+pkg i gcc-9 make cmake -y
+
 ```
 
 ## Seja feliz 😁
