@@ -19,7 +19,7 @@ pkg upd -y && pkg upg -y
 pkg i gcc-9 make cmake -y
 pkg uninstall clang -y
 git clone https://github.com/pawn-lang/compiler
-mkdir -p build && cd build && cmake ../compiler/source/compiler -DCMAKE_C_FLAGS=-mbe32 -DCMAKE_C_COMPILER=/data/data/com.termux/files/usr/bin-DCMAKE_BUILD_TYPE=Release && make && mv pawn* ~/..usr/bin && mv lib* ~/../usr/lib
+mkdir -p build && cd build && cmake ../compiler/source/compiler -DCMAKE_C_FLAGS=-mbe32 -DCMAKE_C_COMPILER="/data/data/com.termux/files/usr/bin/gcc-9" -DCMAKE_BUILD_TYPE=Release && make && mv pawn* ~/..usr/bin && mv lib* ~/../usr/lib
 cd $HOME && rm -rf termux-pawn
 clear
 echo -e "\033[32mCompilador instalado com sucesso!"
