@@ -13,7 +13,7 @@ clonar esse repositorio e executar o script
 ```bsh
 pkg i git -y
 git clone https://github.com/device-black/termux-pawn
-cd termux-pawn && chmod -x install.bsh && ./install.bsh
+cd termux-pawn && chmod +x install.bsh && ./install.bsh
 ```
 
 ## Seja feliz 😁
