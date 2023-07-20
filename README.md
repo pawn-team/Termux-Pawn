@@ -20,7 +20,7 @@ pkg i gcc-9 make cmake -y
 pkg uninstall clang -y
 git clone https://github.com/pawn-lang/compiler
 mkdir -p build && cd build && cmake ../compiler/source/compiler -DCMAKE_C_FLAGS=-mbe32 -DCMAKE_C_COMPILER="/data/data/com.termux/files/usr/bin/gcc-9" -DCMAKE_BUILD_TYPE=Release && make && mv pawn* ~/..usr/bin && mv lib* ~/../usr/lib
-cd $HOME && rm -rf termux-pawn
+cd $HOME && rm -rf termux-pawn build compiler
 clear
 echo -e "\033[32mCompilador instalado com sucesso!"
 echo -e "\n\033[0m1: Observe que há uma pasta chamada \033[33m\"pawn-lang\" \033[0mna memoria interna!"
