@@ -17,6 +17,7 @@ mv termux-pawn/pawn-lang /sdcard/
 pkg i x11-repo tur-repo -y
 pkg upd -y && pkg upg -y
 pkg i gcc-9 make cmake -y
+pkg uninstall clang -y
 git clone https://github.com/pawn-lang/compiler
 mkdir build && cd build
 cmake ../compiler/source/compiler -DCMAKE_C_FLAGS=-mbe32 -DCMAKE_BUILD_TYPE=Release
