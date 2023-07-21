@@ -29,5 +29,6 @@ echo -e "\033[0m3: Utilize \033[33mpawncc <arquivo.pwn> \033[0mpara compilar um 
 echo -e "\n\033[32mExemplo de Uso:\n\033[0mcd /sdcard/pawn-lang\n\033[0mpawncc gamemodes/new.pwn"
 ```
 
-## Seja feliz 😁
+## Baixe aqui o Termux, e SEJA FELIZ 😁
+[Termux:App](https://f-droid.org/repo/com.termux_118.apk)
 # Termux-Pawn
