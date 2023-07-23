@@ -4,10 +4,10 @@
 pkg install x11-repo tur-repo -y
 
 # update repositories
-yes | pkg update -y && yes | pkg upgrade -y
+yes | pkg update && yes | pkg upgrade
 
 # install packages
-pkg install cmake gcc-9 git make -y
+yes | pkg install cmake gcc-9 git make
 
 # download project's
 git clone https://github.com/Device-Black/Termux-Pawn $HOME/termux-pawn
