@@ -3,8 +3,8 @@
 # install repositories
 pkg install x11-repo tur-repo -y
 
-# update repositories
-yes | pkg update && yes | pkg upgrade
+#  update repositories
+yes | pkg  update -y && yes | pkg upgrade -y
 
 # install packages
 yes | pkg install cmake gcc-9 git make
