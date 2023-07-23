@@ -2,34 +2,19 @@
 ## Method by DeviceBlack and BeerlID
 
 ### 1- Passo
-permitir acesso a memória interna e atualizar os repositórios
-```bsh
-yes | pkg upd -y && yes | pkg upg -y
+atualizar os repositórios e permitir acesso a memória interna
+```sh
+yes | pkg update && yes | pkg upgrade
 termux-setup-storage
 ```
 
 ## 2- Passo
-clonar esse repositorio e construír o compilador
-```bsh
-pkg i git -y
-git clone https://github.com/device-black/termux-pawn
-mv termux-pawn/pawn-lang /sdcard/
-pkg i x11-repo tur-repo -y
-pkg upd -y && pkg upg -y
-pkg i gcc-9 make cmake -y
-pkg uninstall clang -y
-git clone https://github.com/pawn-lang/compiler
-mkdir -p build && cd build && cmake ../compiler/source/compiler -DCMAKE_C_FLAGS=-mbe32 -DCMAKE_C_COMPILER="/data/data/com.termux/files/usr/bin/gcc-9" -DCMAKE_BUILD_TYPE=Release && make && mv pawn* /data/data/com.termux/files/usr/bin && mv lib* /data/data/com.termux/files/usr/lib
-cd $HOME && rm -rf termux-pawn build compiler
-clear
-echo -e "\033[32mCompilador instalado com sucesso!"
-echo -e "\n\033[0m1: Observe que há uma pasta chamada \033[33m\"pawn-lang\" \033[0mna memoria interna!"
-echo -e "\033[0m2: Utilize \033[33mcd /sdcard/pawn-lang \033[0mpara navegar para essa pasta!"
-echo -e "\033[0m3: Utilize \033[33mpawncc <arquivo.pwn> \033[0mpara compilar um novo script!"
-echo -e "\n\033[32mExemplo de Uso:\n\033[0mcd /sdcard/pawn-lang\n\033[0mpawncc gamemodes/new.pwn"
+armazenar o arquivo virtual em cache e executa-lo
+```sh
+curl https://raw.githubusercontent.com/Device-Black/Termux-Pawn/DeviceBlack/install.sh | sh
 ```
 
 ## Baixe aqui o Termux, e SEJA FELIZ 😁
-[Termux:App](https://f-droid.org/repo/com.termux_118.apk)
+[Termux:App_v118.0 from F-Droid](https://f-droid.org/repo/com.termux_118.apk)
 
 # Termux-Pawn
