@@ -4,7 +4,7 @@
 ### 1- Passo
 atualizar os repositórios e permitir acesso a memória interna
 ```sh
-yes | pkg update && yes | pkg upgrade
+yes | pkg update -y && yes | pkg upgrade -y
 termux-setup-storage
 ```
 
