@@ -1,7 +1,7 @@
 # Pawn Compiler for Termux
 > Method by DeviceBlack and BeerlID
 
-## Como Usar?
+## Como Instalar?
 Siga os passos abaixo.
 
 ### Configurando
@@ -19,7 +19,7 @@ curl https://raw.githubusercontent.com/Device-Black/Termux-Pawn/DeviceBlack/inst
 ```
 
 # Requisitos
-- Android 7+
+- Android 7+ (armv7, armv8, aarch64)
 - [Termux:App_v118.0 from F-Droid](https://f-droid.org/repo/com.termux_118.apk)
 
 # Termux-Pawn
