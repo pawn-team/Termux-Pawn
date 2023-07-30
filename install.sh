@@ -20,13 +20,13 @@ mv $HOME/termux-pawn/pawn-lang $HOME/storage/shared
 mv $HOME/termux-pawn/pawncc.c $HOME/compiler/source/compiler/
 
 # compile project
-mkdir -p $HOME/build && cd $HOME/build && cmake $HOME/compiler/source/compiler -DCMAKE_C_COMPILER=$PATH/gcc-9 -DCMAKE_BUILD_TYPE=Release && make
+mkdir -p $HOME/build && cd $HOME/build && cmake $HOME/compiler/source/compiler -DCMAKE_C_COMPILER=$PREFIX/bin/gcc-9 -DCMAKE_BUILD_TYPE=Release && make
 
 # move lib file to main lib folder
 mv $HOME/build/libpawnc.so $PREFIX/lib
 
 # move bin file to main bin folder
-mv $HOME/build/pawn* $PATH
+mv $HOME/build/pawn* $PREFIX/bin
 
 # delete all cache
 rm -rf $HOME/build $HOME/compiler $HOME/termux-pawn
