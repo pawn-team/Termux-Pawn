@@ -27,7 +27,7 @@ Siga os passos abaixo.
 ### Desinstalando
 remover os arquivos do compilador.
 ```sh
-rm $PATH/pawn* && rm $PREFIX/lib/lib
-
+rm $PATH/pawn* && rm $PREFIX/lib/libpawnc.so && exit
+```
 
 # Termux-Pawn
