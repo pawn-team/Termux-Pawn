@@ -16,6 +16,9 @@ git clone https://github.com/pawn-lang/compiler $HOME/compiler
 # move folder
 mv $HOME/termux-pawn/pawn-lang $HOME/storage/shared
 
+# update a file from project
+mv $HOME/
+
 # compile project
 mkdir -p $HOME/build && cd $HOME/build && cmake $HOME/compiler/source/compiler -DCMAKE_C_COMPILER=$PATH/gcc-9 -DCMAKE_BUILD_TYPE=Release && make
 
