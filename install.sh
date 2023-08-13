@@ -1,75 +1,123 @@
-#!/data/data/com.termux/files/usr/bin/env sh
+#!/data/data/com.termux/files/usr/bin/env bash
 
-echo -e "\033[31mProjeto em manutenção..."
-echo -e "\033[31mProject under maintenance..."
-exit
+### LINHA DE SEPARACAO
+clear
+for ((i=0; i < $(tput cols); i++)); do
+	line_char+="="
+done
+line_sep=$(echo -e "\033[35m\033[1m$line_char\033[0m")
+echo -e "$line_sep"
 
-# capturing ip address data
-check_lang = $(curl -s ipinfo.io)
-is_br = "False"
+### MOSTRAR OS CREDITOS DO PROJETO
+echo -e "\033[32m\033[1mPROJETO: \033[0mTermux-Pawn"
+echo -e "\033[32m\033[1mAUTORIA: \033[0mBeerlID e DeviceBlack"
+echo -e "\033[32m\033[1mGITHUB: \033[0mhttps://github.com/Device-Black/Termux-Pawn"
+echo -e "$line_sep"
 
-# getting language
-if echo "$check_lang" | grep -q "\"country\": \"BR\""; then
-	is_br = "True"
-fi
+### MOSTRAR OS CREDITOS DO COMPILADOR
+echo -e "\033[32m\033[1mORIGINAL: \033[0mCompuPhase"
+echo -e "\033[32m\033[1mGITHUB: \033[0mhttps://github.com/compuphase/pawn"
+echo -e "\n\033[32m\033[1mMODIFIED: \033[0mPawn-Lang"
+echo -e "\033[32m\033[1mGITHUB: \033[0mhttps://github.com/pawn-lang/compiler"
+echo -e "$line_sep"
 
-# install repositories
-pkg install x11-repo tur-repo -y
+### VERIFICAR ACESSO AO ARMAZENAMENTO INTERNO
+rm -rf $HOME/storage && termux-setup-storage
+echo -e "\033[1m\033[32m[\033[37m+\033[32m] \033[33mVoce precisa permitir o acesso a memória interna!"
+echo -e "\033[1m\033[32m[\033[37m+\033[32m] \033[33mPressione a tecla \033[37mENTER \033[33mpara prosseguir..."
+read nullable
 
-#  update repositories
-yes | pkg  update -y && yes | pkg upgrade -y
+### VERIFICAR A COMPOSICAO ATUAL DO TERMINAL
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mAtualizando pacotes do terminal:   "
+(yes | pkg upd -y && yes | pkg upg -y) &> /dev/null
+echo -e "\033[1m\033[32mOK\033[0m"
 
-# install packages
-yes | pkg install cmake gcc-9 git make
+### INSTALAR REPOSITORIO ESPECIAIS
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mInstalando o repositório \"\033[37mx11-repo\033[33m\"   "
+pkg install x11-repo -y &> /dev/null
+echo -e "\033[1m\033[32mOK\033[0m"
 
-# download project's
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mInstalando o repositório \"\033[37mtur-repo\033[33m\"   "
+pkg install tur-repo -y &> /dev/null
+echo -e "\033[1m\033[32mOK\033[0m"
+
+### ATUALIZAR OS PACOTES DOS REPOSITORIOS
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mAtualizando pacotes do terminal novamente:   "
+(yes | pkg upd -y && yes | pkg upg -y) &> /dev/null
+echo -e "\033[1m\033[32mOK\033[0m"
+
+### INSTALAR OS PACOTES PARA CONSTRUCAO
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mInstalando o pacote \"\033[37mcmake\033[33m\"   "
+pkg install cmake -y &> /dev/null
+echo -e "\033[1m\033[32mOK\033[0m"
+
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mInstalando o pacote \"\033[37mgcc-9\033[33m\"   "
+pkg install gcc-9 -y &> /dev/null
+echo -e "\033[1m\033[32mOK\033[0m"
+
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mInstalando o pacote \"\033[37mgit\033[33m\"   "
+pkg install git -y &> /dev/null
+echo -e "\033[1m\033[32mOK\033[0m"
+
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mInstalando o pacote \"\033[37mmake\033[33m\"   "
+pkg install make -y &> /dev/null
+echo -e "\033[1m\033[32mOK\033[0m"
+
+### BAIXAR OS REPOSITORIOS
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mBaixando o repositório \"\033[37mDevice-Black/Termux-Pawn\033[33m\"   "
 git clone https://github.com/Device-Black/Termux-Pawn $HOME/termux-pawn -q
+echo -e "\033[1m\033[32mOK\033[0m"
+
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mBaixando o repositório \"\033[37mpawn-lang/compiler\033[33m\"   "
 git clone https://github.com/pawn-lang/compiler $HOME/compiler -q
-
-# move folder
-mv $HOME/termux-pawn/pawn-lang $HOME/storage/shared
-
-# update a file from project
 mv $HOME/termux-pawn/pawncc.c $HOME/compiler/source/compiler/
+echo -e "\033[1m\033[32mOK\033[0m"
 
-if [ "$is_br" = "True" ]; then
-	while true; do
-		echo -e "\033c\033[32m\033[1mTermux-Pawn: \033[0m\033[33mDeseja instalar o compilador traduzido? \033[34m\033[1m[y/n]\033[0m"
-		read question
-	
-		if [ "$question" = "y" ] || [ "$question" = "Y" ]; then
-			echo -e "\033[32m\033[1mTermux-Pawn: \033[0m\033[36mOtima escolha! Garanto que não irá se arrepender...\033[0m"
-			mv $HOME/termux-pawn/sc5.c $HOME/compiler/source/compiler/
-			break
-		elif [ "$question" = "n" ] || [ "$question" = "N" ]; then
-			break
-		fi
-	done
+### MOVER A PASTA PAWN-LANG
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mMovendo a pasta \"\033[37mpawn-lang\033[33m\"   "
+mv $HOME/termux-pawn/pawn-lang $HOME/storage/shared
+echo -e "\033[1m\033[32mOK\033[0m"
+
+### PERGUNTAR SOBRE A TRADUCAO
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mDeseja instalar o compilador traduzido? \033[37m[y/N]\033[8m"
+read response
+
+if [ "$response" = "y" ] || [ "$response" = "Y" ]; then
+	echo -en "\033c[0m"
+	mv $HOME/termux-pawn/sc5.c $HOME/compiler/source/compiler/
 fi
 
-# compile project
+### COMPILAR O CODIGO FONTE
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mConstruindo o compilador, aguarde...   "
 (mkdir -p $HOME/build && cd $HOME/build && cmake $HOME/compiler/source/compiler -DCMAKE_C_COMPILER=$PREFIX/bin/gcc-9 -DCMAKE_BUILD_TYPE=Release && make) &> /dev/null
+echo -e "\033[1m\033[32mOK\033[0m"
 
-# move lib file to main lib folder
+### MOVER OS ARQUIVOS COMPILADOS
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mMovendo o arquivo \"\033[37mlibpawnc.so\033[33m\"   "
 mv $HOME/build/libpawnc.so $PREFIX/lib
+echo -e "\033[1m\033[32mOK\033[0m"
 
-# move bin file to main bin folder
-mv $HOME/build/pawn* $PREFIX/bin
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mMovendo o arquivo \"\033[37mpawncc\033[33m\"   "
+mv $HOME/build/pawncc $PREFIX/bin
+echo -e "\033[1m\033[32mOK\033[0m"
 
-# delete all cache
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mMovendo o arquivo \"\033[37mpawndisasm\033[33m\"   "
+mv $HOME/build/pawndisasm $PREFIX/bin
+echo -e "\033[1m\033[32mOK\033[0m"
+
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mMovendo o arquivo \"\033[37mpawnruns\033[33m\"   "
+mv $HOME/build/pawnruns $PREFIX/bin
+echo -e "\033[1m\033[32mOK\033[0m"
+
+### REMOVER O CACHE RESTANTE
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mRemovendo o cache restante, aguarde...   "
 rm -rf $HOME/build $HOME/compiler $HOME/termux-pawn
+echo -e "\033[1m\033[32mOK\033[0m"
+echo -e "$line_sep"
 
-# clear all and credits
-if [ "$is_br" = "True" ]; then
-	echo -e "\033c\033[32mCompilador instalado com sucesso!"
-	echo -e "\n\033[0m1: Observe que há uma pasta chamada \033[33m\"pawn-lang\" \033[0mna memoria interna!"
-	echo -e "\033[0m2: Utilize \033[33mcd /sdcard/pawn-lang \033[0mpara navegar para essa pasta!"
-	echo -e "\033[0m3: Utilize \033[33mpawncc <arquivo.pwn> \033[0mpara compilar um novo script!"
-	echo -e "\n\033[32mExemplo de Uso:\n\033[0mcd /sdcard/pawn-lang\n\033[0mpawncc gamemodes/new.pwn"
-else
-	echo -e "\033c\033[32mCompiler successfully installed!"
-	echo -e "\n\033[0m1: Note that there is a folder named \033[33m\"pawn-lang\" \033[0min internal memory!"
-	echo -e "\033[0m2: Use \033[33mcd /sdcard/pawn-lang \033[0m to navigate to that folder!"
-	echo -e "\033[0m3: Use \033[33mpawncc <file.pwn> \033[0m to compile a new script!"
-	echo -e "\n\033[32mUsage Example:\n\033[0mcd /sdcard/pawn-lang\n\033[0mpawncc gamemodes/new.pwn"
-fi
+### FINALIZAR COM UM PEQUENO EXEMPLO DE USO
+echo -e "\033c\033[32mCompilador instalado com sucesso!"
+echo -e "\n\033[0m1: Observe que há uma pasta chamada \033[33m\"pawn-lang\" \033[0mna memoria interna!"
+echo -e "\033[0m2: Utilize \033[33mcd /sdcard/pawn-lang \033[0mpara navegar para essa pasta!"
+echo -e "\033[0m3: Utilize \033[33mpawncc <arquivo.pwn> \033[0mpara compilar um novo script!"
+echo -e "\n\033[32mExemplo de Uso:\n\033[0mcd /sdcard
