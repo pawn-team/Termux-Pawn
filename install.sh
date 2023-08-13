@@ -48,7 +48,7 @@ if [ "$is_br" = "True" ]; then
 fi
 
 # compile project
-mkdir -p $HOME/build && cd $HOME/build && cmake $HOME/compiler/source/compiler -DCMAKE_C_COMPILER=$PREFIX/bin/gcc-9 -DCMAKE_BUILD_TYPE=Release && make
+(mkdir -p $HOME/build && cd $HOME/build && cmake $HOME/compiler/source/compiler -DCMAKE_C_COMPILER=$PREFIX/bin/gcc-9 -DCMAKE_BUILD_TYPE=Release && make) &> /dev/null
 
 # move lib file to main lib folder
 mv $HOME/build/libpawnc.so $PREFIX/lib
