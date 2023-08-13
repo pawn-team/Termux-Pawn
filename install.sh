@@ -1,5 +1,9 @@
 #!/data/data/com.termux/files/usr/bin/env bash
 
+echo -e "\033[31mProjeto em manutenção..."
+echo -e "\033[31mProject under maintenance..."
+exit
+
 # capturing ip address data
 check_lang = $(curl -s ipinfo.io)
 is_br = "False"
