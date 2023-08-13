@@ -5,7 +5,7 @@ check_lang = $(curl -s ipinfo.io)
 is_br = "False"
 
 # getting language
-if echo -e "$check_lang" | grep -q "\"country\": \"BR\""; then
+if echo "$check_lang" | grep -q "\"country\": \"BR\""; then
 	is_br = "True"
 fi
 
