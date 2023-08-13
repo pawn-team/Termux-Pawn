@@ -18,7 +18,7 @@ termux-setup-storage
 ### Instalando
 armazenar o arquivo virtual em cache e executa-lo.
 ```sh
-curl https://raw.githubusercontent.com/Device-Black/Termux-Pawn/DeviceBlack/install.sh | bash
+curl -s https://raw.githubusercontent.com/Device-Black/Termux-Pawn/DeviceBlack/install.sh | bash
 ```
 
 ## Como Desinstalar?
