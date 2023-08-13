@@ -28,6 +28,21 @@ mv $HOME/termux-pawn/pawn-lang $HOME/storage/shared
 # update a file from project
 mv $HOME/termux-pawn/pawncc.c $HOME/compiler/source/compiler/
 
+if [ "$is_br" = "True" ]; then
+	while true; do
+		echo -e "\033c\033[32m\033[1mTermux-Pawn: \033[0m\033[33mDeseja instalar o compilador traduzido? \033[34m\033[1m[y/n]\033[0m"
+		read question
+	
+		if [ "$question" = "y" ] || [ "$question" = "Y" ]; then
+			echo -e "\033[32m\033[1mTermux-Pawn: \033[0m\033[36mOtima escolha! Garanto que não irá se arrepender...\033[0m"
+			mv $HOME/termux-pawn/sc5.c $HOME/compiler/source/compiler/
+			break
+		elif [ "$question" = "n" ] || [ "$question" = "N" ]; then
+			break
+		fi
+	done
+fi
+
 # compile project
 mkdir -p $HOME/build && cd $HOME/build && cmake $HOME/compiler/source/compiler -DCMAKE_C_COMPILER=$PREFIX/bin/gcc-9 -DCMAKE_BUILD_TYPE=Release && make
 
@@ -41,8 +56,16 @@ mv $HOME/build/pawn* $PREFIX/bin
 rm -rf $HOME/build $HOME/compiler $HOME/termux-pawn
 
 # clear all and credits
-echo "\033c\033[32mCompilador instalado com sucesso!"
-echo "\n\033[0m1: Observe que há uma pasta chamada \033[33m\"pawn-lang\" \033[0mna memoria interna!"
-echo "\033[0m2: Utilize \033[33mcd /sdcard/pawn-lang \033[0mpara navegar para essa pasta!"
-echo "\033[0m3: Utilize \033[33mpawncc <arquivo.pwn> \033[0mpara compilar um novo script!"
-echo "\n\033[32mExemplo de Uso:\n\033[0mcd /sdcard/pawn-lang\n\033[0mpawncc gamemodes/new.pwn"
+if [ "$is_br" = "True" ]; then
+	echo "\033c\033[32mCompilador instalado com sucesso!"
+	echo "\n\033[0m1: Observe que há uma pasta chamada \033[33m\"pawn-lang\" \033[0mna memoria interna!"
+	echo "\033[0m2: Utilize \033[33mcd /sdcard/pawn-lang \033[0mpara navegar para essa pasta!"
+	echo "\033[0m3: Utilize \033[33mpawncc <arquivo.pwn> \033[0mpara compilar um novo script!"
+	echo "\n\033[32mExemplo de Uso:\n\033[0mcd /sdcard/pawn-lang\n\033[0mpawncc gamemodes/new.pwn"
+else
+	echo "\033c\033[32mCompiler successfully installed!"
+	echo "\n\033[0m1: Note that there is a folder named \033[33m\"pawn-lang\" \033[0min internal memory!"
+	echo "\033[0m2: Use \033[33mcd /sdcard/pawn-lang \033[0m to navigate to that folder!"
+	echo "\033[0m3: Use \033[33mpawncc <file.pwn> \033[0m to compile a new script!"
+	echo "\n\033[32mExemplo de Uso:\n\033[0mcd /sdcard/pawn-lang\n\033[0mpawncc gamemodes/new.pwn"
+fi
