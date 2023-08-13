@@ -67,5 +67,5 @@ else
 	echo "\n\033[0m1: Note that there is a folder named \033[33m\"pawn-lang\" \033[0min internal memory!"
 	echo "\033[0m2: Use \033[33mcd /sdcard/pawn-lang \033[0m to navigate to that folder!"
 	echo "\033[0m3: Use \033[33mpawncc <file.pwn> \033[0m to compile a new script!"
-	echo "\n\033[32mExemplo de Uso:\n\033[0mcd /sdcard/pawn-lang\n\033[0mpawncc gamemodes/new.pwn"
+	echo "\n\033[32mUsage Example:\n\033[0mcd /sdcard/pawn-lang\n\033[0mpawncc gamemodes/new.pwn"
 fi
