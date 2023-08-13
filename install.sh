@@ -2,8 +2,9 @@
 
 ### LINHA DE SEPARACAO
 clear
+line_char=""
 for ((i=0; i < $(tput cols); i++)); do
-	line_char+="="
+    line_char+="="
 done
 line_sep=$(echo -e "\033[35m\033[1m$line_char\033[0m")
 echo -e "$line_sep"
