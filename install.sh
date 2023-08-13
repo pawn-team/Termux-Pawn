@@ -19,8 +19,8 @@ yes | pkg  update -y && yes | pkg upgrade -y
 yes | pkg install cmake gcc-9 git make
 
 # download project's
-git clone https://github.com/Device-Black/Termux-Pawn $HOME/termux-pawn
-git clone https://github.com/pawn-lang/compiler $HOME/compiler
+git clone https://github.com/Device-Black/Termux-Pawn $HOME/termux-pawn -q
+git clone https://github.com/pawn-lang/compiler $HOME/compiler -q
 
 # move folder
 mv $HOME/termux-pawn/pawn-lang $HOME/storage/shared
