@@ -26,7 +26,7 @@
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <string.h>n
 #include "sc.h"
 
 #if defined PAWNC_DLL
