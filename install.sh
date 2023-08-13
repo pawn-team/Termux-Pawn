@@ -1,7 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-echo -e "\033c"
-
 ### MOSTRAR OS CREDITOS DO PROJETO
 echo -e "\033[32m\033[1mPROJETO: \033[0mTermux-Pawn"
 echo -e "\033[32m\033[1mAUTORIA: \033[0mBeerlID e DeviceBlack"
