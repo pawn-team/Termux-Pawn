@@ -83,6 +83,7 @@ echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mDeseja instalar o compilado
 read response
 
 if [ "$response" = "y" ] || [ "$response" = "Y" ]; then
+	mv $HOME/termux-pawn/sc1.c $HOME/compiler/source/compiler/
 	mv $HOME/termux-pawn/sc5.c $HOME/compiler/source/compiler/
 fi
 
