@@ -1,4 +1,13 @@
-#!/data/data/com.termux/files/usr/bin/env sh
+#!/data/data/com.termux/files/usr/bin/env bash
+
+# capturing ip address data
+check_lang = $(curl -s ipinfo.io)
+is_br = "False"
+
+# getting language
+if echo "$check_lang" | grep -q "\"country\": \"BR\""; then
+	is_br = "True"
+fi
 
 # install repositories
 pkg install x11-repo tur-repo -y
