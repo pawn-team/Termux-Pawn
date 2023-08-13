@@ -31,7 +31,7 @@ pkg install tur-repo -y &> /dev/null
 echo -e "\033[1m\033[32mOK\033[0m"
 
 ### ATUALIZAR OS PACOTES DOS REPOSITORIOS
-echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mAtualizando pacotes do terminal:   "
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mAtualizando pacotes do terminal   "
 (yes | pkg upd -y && yes | pkg upg -y) &> /dev/null
 echo -e "\033[1m\033[32mOK\033[0m"
 
