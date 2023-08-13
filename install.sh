@@ -21,6 +21,17 @@ echo -e "\n\033[32m\033[1mMODIFIED: \033[0mPawn-Lang"
 echo -e "\033[32m\033[1mGITHUB: \033[0mhttps://github.com/pawn-lang/compiler"
 echo -e "$line_sep"
 
+### VERIFICAR ACESSO AO ARMAZENAMENTO INTERNO
+rm -rf $HOME/storage && termux-setup-storage
+echo -e "\033[1m\033[32m[\033[37m+\033[32m] \033[33mVoce precisa permitir o acesso a memória interna!"
+echo -e "\033[1m\033[32m[\033[37m+\033[32m] \033[33mPressione a tecla \033[37mENTER \033[33mpara prosseguir..."
+read nullable
+
+### VERIFICAR A COMPOSICAO ATUAL DO TERMINAL
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mAtualizando pacotes do terminal:   "
+(yes | pkg upd -y && yes | pkg upg -y) &> /dev/null
+echo -e "\033[1m\033[32mOK\033[0m"
+
 ### INSTALAR REPOSITORIO ESPECIAIS
 echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mInstalando o repositório \"\033[37mx11-repo\033[33m\"   "
 pkg install x11-repo -y &> /dev/null
@@ -31,7 +42,7 @@ pkg install tur-repo -y &> /dev/null
 echo -e "\033[1m\033[32mOK\033[0m"
 
 ### ATUALIZAR OS PACOTES DOS REPOSITORIOS
-echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mAtualizando pacotes do terminal   "
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mAtualizando pacotes do terminal novamente:   "
 (yes | pkg upd -y && yes | pkg upg -y) &> /dev/null
 echo -e "\033[1m\033[32mOK\033[0m"
 
@@ -64,7 +75,7 @@ echo -e "\033[1m\033[32mOK\033[0m"
 
 ### MOVER A PASTA PAWN-LANG
 echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mMovendo a pasta \"\033[37mpawn-lang\033[33m\"   "
-mv $HOME/termux-pawn/pawn-lang $HOME/storage/shared
+cp -r $HOME/termux-pawn/pawn-lang $HOME/sdcard
 echo -e "\033[1m\033[32mOK\033[0m"
 
 ### PERGUNTAR SOBRE A TRADUCAO
