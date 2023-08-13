@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/env bash
+#!/data/data/com.termux/files/usr/bin/env sh
 
 echo -e "\033[31mProjeto em manutenção..."
 echo -e "\033[31mProject under maintenance..."
