@@ -119,5 +119,5 @@ echo -e "\033[32mCompilador instalado com sucesso!"
 echo -e "\n\033[0m1: Observe que há uma pasta chamada \033[33m\"pawn-lang\" \033[0mna memoria interna!"
 echo -e "\033[0m2: Utilize \033[33mcd /sdcard/pawn-lang \033[0mpara navegar para essa pasta!"
 echo -e "\033[0m3: Utilize \033[33mpawncc <arquivo.pwn> \033[0mpara compilar um novo script!"
-echo -e "\n\033[32mExemplo de Uso:\n\033[0mcd /sdcard
+echo -e "\n\033[32mExemplo de Uso:\n\033[0mcd /sdcard"
 echo -e "$line_sep"
