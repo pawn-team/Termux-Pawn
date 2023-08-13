@@ -2,17 +2,6 @@
 
 echo -e "\033c"
 
-### LINHA DE SEPARACAO
-line_char=""
-
-for ((i = 0; i < $(tput cols); i++));
-do
-	line_char+="="
-done
-
-line_sep=$(echo -e "\033[1m\033[35m$line_char\033[0m")
-echo -e $line_sep
-
 ### MOSTRAR OS CREDITOS DO PROJETO
 echo -e "\033[32m\033[1mPROJETO: \033[0mTermux-Pawn"
 echo -e "\033[32m\033[1mAUTORIA: \033[0mBeerlID e DeviceBlack"
