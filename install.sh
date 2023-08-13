@@ -4,14 +4,13 @@
 echo  "\033[32m\033[1mPROJETO: \033[0mTermux-Pawn"
 echo  "\033[32m\033[1mAUTORIA: \033[0mBeerlID e DeviceBlack"
 echo  "\033[32m\033[1mGITHUB: \033[0mhttps://github.com/Device-Black/Termux-Pawn"
-echo  "$line_sep"
+
 
 ### MOSTRAR OS CREDITOS DO COMPILADOR
 echo  "\033[32m\033[1mORIGINAL: \033[0mCompuPhase"
 echo  "\033[32m\033[1mGITHUB: \033[0mhttps://github.com/compuphase/pawn"
 echo  "\n\033[32m\033[1mMODIFIED: \033[0mPawn-Lang"
 echo  "\033[32m\033[1mGITHUB: \033[0mhttps://github.com/pawn-lang/compiler"
-echo  "$line_sep"
 
 ### VERIFICAR ACESSO AO ARMAZENAMENTO INTERNO
 rm -rf $HOME/storage && termux-setup-storage
@@ -106,7 +105,7 @@ echo  "\033[1m\033[32mOK\033[0m"
 echo n "\033[1m\033[32m[\033[37m+\033[32m] \033[33mRemovendo o cache restante, aguarde...   "
 rm -rf $HOME/build $HOME/compiler $HOME/termux-pawn
 echo  "\033[1m\033[32mOK\033[0m"
-echo  "$line_sep"
+
 
 ### FINALIZAR COM UM PEQUENO EXEMPLO DE USO
 echo  "\033[1m\033[32mCompilador instalado com sucesso!\n"
@@ -114,4 +113,3 @@ echo  "\033[1m\033[37m- Observe que a pasta \033[33m\"pawn-lang\" \033[0mreside 
 echo  "\033[1m\033[37m- Utilize \033[33mcd /sdcard/pawn-lang \033[37mpara navegar até a pasta!"
 echo  "\033[1m\033[37m- Utilize \033[33mpawncc <arquivo.pwn> \033[37mpara compilar algum script!"
 echo  "\n\033[1m\033[32mExemplo de Uso:\n\033[37mcd /sdcard/pawn-lang\npawncc gamemodes/new.pwn"
-echo  "$line_sep"
