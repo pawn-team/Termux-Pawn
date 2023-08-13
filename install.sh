@@ -78,7 +78,13 @@ echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mMovendo a pasta \"\033[37mp
 cp -r $HOME/termux-pawn/pawn-lang $HOME/sdcard
 echo -e "\033[1m\033[32mOK\033[0m"
 
-mv $HOME/termux-pawn/sc5.c $HOME/compiler/source/compiler/
+### PERGUNTAR SOBRE A TRADUCAO
+echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mDeseja instalar o compilador traduzido? \033[37m[y/N] "
+read response
+
+if [ "$response" = "y" ] || [ "$response" = "Y" ]; then
+	mv $HOME/termux-pawn/sc5.c $HOME/compiler/source/compiler/
+fi
 
 ### COMPILAR O CODIGO FONTE
 echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mConstruindo o compilador, aguarde...   "
