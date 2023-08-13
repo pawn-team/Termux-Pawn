@@ -5,7 +5,7 @@ check_lang = $(curl -s ipinfo.io)
 is_br = "False"
 
 # getting language
-if echo "$check_lang" | grep -q "\"country\": \"BR\""; then
+if echo -e "$check_lang" | grep -q "\"country\": \"BR\""; then
 	is_br = "True"
 fi
 
@@ -57,15 +57,15 @@ rm -rf $HOME/build $HOME/compiler $HOME/termux-pawn
 
 # clear all and credits
 if [ "$is_br" = "True" ]; then
-	echo "\033c\033[32mCompilador instalado com sucesso!"
-	echo "\n\033[0m1: Observe que há uma pasta chamada \033[33m\"pawn-lang\" \033[0mna memoria interna!"
-	echo "\033[0m2: Utilize \033[33mcd /sdcard/pawn-lang \033[0mpara navegar para essa pasta!"
-	echo "\033[0m3: Utilize \033[33mpawncc <arquivo.pwn> \033[0mpara compilar um novo script!"
-	echo "\n\033[32mExemplo de Uso:\n\033[0mcd /sdcard/pawn-lang\n\033[0mpawncc gamemodes/new.pwn"
+	echo -e "\033c\033[32mCompilador instalado com sucesso!"
+	echo -e "\n\033[0m1: Observe que há uma pasta chamada \033[33m\"pawn-lang\" \033[0mna memoria interna!"
+	echo -e "\033[0m2: Utilize \033[33mcd /sdcard/pawn-lang \033[0mpara navegar para essa pasta!"
+	echo -e "\033[0m3: Utilize \033[33mpawncc <arquivo.pwn> \033[0mpara compilar um novo script!"
+	echo -e "\n\033[32mExemplo de Uso:\n\033[0mcd /sdcard/pawn-lang\n\033[0mpawncc gamemodes/new.pwn"
 else
-	echo "\033c\033[32mCompiler successfully installed!"
-	echo "\n\033[0m1: Note that there is a folder named \033[33m\"pawn-lang\" \033[0min internal memory!"
-	echo "\033[0m2: Use \033[33mcd /sdcard/pawn-lang \033[0m to navigate to that folder!"
-	echo "\033[0m3: Use \033[33mpawncc <file.pwn> \033[0m to compile a new script!"
-	echo "\n\033[32mUsage Example:\n\033[0mcd /sdcard/pawn-lang\n\033[0mpawncc gamemodes/new.pwn"
+	echo -e "\033c\033[32mCompiler successfully installed!"
+	echo -e "\n\033[0m1: Note that there is a folder named \033[33m\"pawn-lang\" \033[0min internal memory!"
+	echo -e "\033[0m2: Use \033[33mcd /sdcard/pawn-lang \033[0m to navigate to that folder!"
+	echo -e "\033[0m3: Use \033[33mpawncc <file.pwn> \033[0m to compile a new script!"
+	echo -e "\n\033[32mUsage Example:\n\033[0mcd /sdcard/pawn-lang\n\033[0mpawncc gamemodes/new.pwn"
 fi
