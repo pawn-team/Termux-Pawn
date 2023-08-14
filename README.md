@@ -17,7 +17,8 @@ yes | pkg update -y && yes | pkg upgrade -y && termux-setup-storage
 ### Instalando
 armazenar o arquivo virtual em cache e executa-lo.
 ```sh
-curl -s https://raw.githubusercontent.com/Device-Black/Termux-Pawn/DeviceBlack/install.sh | bash
+curl -s https://raw.githubusercontent.com/Device-Black/Termux-Pawn/DeviceBlack/install.sh -o install.sh
+bash install.sh
 ```
 
 ## Como Desinstalar?
