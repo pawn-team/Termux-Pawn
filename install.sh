@@ -121,6 +121,8 @@ echo -e "\033[0m\033[1m- Utilize \033[33mpawncc <arquivo.pwn> \033[37mpara compi
 echo -e "\033[1m\033[32mExemplo de Uso:"
 echo -e "\033[0m\033[1mcd /sdcard/pawn-lang"
 echo -e "\033[0m\033[1mpawncc gamemodes/new.pwn"
+echo -e "\n\033[0m\033[1magora se junte a nós na Pawn Express e bora dar um pau no Adrian Caetano, o sadboy chorão que é um administrador do Silva Scripter"
+echo -e "\n\033[0m\033[1mhttps://discord.gg/x6z9CgdAMT"
 linebreaker
 
 # Restaurar o Cursor
