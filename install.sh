@@ -123,6 +123,7 @@ echo -e "\033[0m\033[1mcd /sdcard/pawn-lang"
 echo -e "\033[0m\033[1mpawncc gamemodes/new.pwn"
 echo -e "\n\033[0m\033[1magora se junte a nós na Pawn Express e bora dar um pau no Adrian Caetano, o sadboy chorão que é um administrador do Silva Scripter"
 echo -e "\n\033[0m\033[1mhttps://discord.gg/x6z9CgdAMT"
+termux-open-url https://discord.gg/x6z9CgdAMT
 linebreaker
 
 # Restaurar o Cursor
