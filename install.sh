@@ -2,6 +2,9 @@
 
 # Configuracao Inicial
 clear
+pkg i ncurses-utils -y
+clear
+
 tput civis
 termux-setup-storage -y &> /dev/null
 
