@@ -66,6 +66,8 @@ echo -e "\b\b\b\033[1m\033[37mOK\033[32m]"
 echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mBaixando repositorio pawn-lang/compiler........ \033[32m[\033[37m**\033[32m]"
 git clone https://github.com/pawn-lang/compiler $HOME/compiler -q
 mv $HOME/Termux-Pawn/pawncc.c $HOME/compiler/source/compiler/ &> /dev/null
+mv $HOME/Termux-Pawn/amxcons.c $HOME/compiler/source/amx/ &> /dev/null
+mv $HOME/Termux-Pawn/prun3.c $HOME/compiler/source/amx/pawnrun/ &> /dev/null
 echo -e "\b\b\b\033[1m\033[37mOK\033[32m]"
 
 # Sugerir Tradução
