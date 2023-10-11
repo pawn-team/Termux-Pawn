@@ -1,5 +1,5 @@
 # Pawn Compiler for Termux
-> Method by DeviceBlack and BeerlID
+> Method by DeviceWhite and BeerlID
 
 # Requisitos
 - Android 7+ (Testado com: armv7, armv8 e aarch64)
