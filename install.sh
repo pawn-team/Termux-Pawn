@@ -65,9 +65,9 @@ echo -e "\b\b\b\033[1m\033[37mOK\033[32m]"
 
 echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[33mBaixando repositorio pawn-lang/compiler........ \033[32m[\033[37m**\033[32m]"
 git clone https://github.com/pawn-lang/compiler $HOME/compiler -q
-mv $HOME/Termux-Pawn/pawncc.c $HOME/compiler/source/compiler/ &> /dev/null
-mv $HOME/Termux-Pawn/amxcons.c $HOME/compiler/source/amx/ &> /dev/null
-mv $HOME/Termux-Pawn/prun3.c $HOME/compiler/source/amx/pawnrun/ &> /dev/null
+mv $HOME/Termux-Pawn/source/pawncc.c $HOME/compiler/source/compiler/ &> /dev/null
+mv $HOME/Termux-Pawn/source/amxcons.c $HOME/compiler/source/amx/ &> /dev/null
+mv $HOME/Termux-Pawn/source/prun3.c $HOME/compiler/source/amx/pawnrun/ &> /dev/null
 echo -e "\b\b\b\033[1m\033[37mOK\033[32m]"
 
 # Sugerir Tradução
@@ -75,9 +75,9 @@ echo -en "\033[1m\033[32m[\033[37m+\033[32m] \033[35mDeseja instalar o compilado
 read translate
 
 if [ "$translate" = "y" ] || [ "$translate" = "Y" ]; then
-	mv $HOME/Termux-Pawn/libpawnc.c $HOME/compiler/source/compiler/ &> /dev/null
-	mv $HOME/Termux-Pawn/sc1.c $HOME/compiler/source/compiler/ &> /dev/null
-	mv $HOME/Termux-Pawn/sc5.c $HOME/compiler/source/compiler/ &> /dev/null
+	mv $HOME/Termux-Pawn/source/libpawnc.c $HOME/compiler/source/compiler/ &> /dev/null
+	mv $HOME/Termux-Pawn/source/sc1.c $HOME/compiler/source/compiler/ &> /dev/null
+	mv $HOME/Termux-Pawn/source/sc5.c $HOME/compiler/source/compiler/ &> /dev/null
 fi
 
 # Construir o Compilador
