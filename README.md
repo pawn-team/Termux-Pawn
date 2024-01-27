@@ -1,37 +1,6 @@
 # Pawn Compiler for Termux
 > Method by DeviceWhite and BeerlID
 
-# Requisitos
-- Android 7+ (Testado com: armv7, armv8 e aarch64)
-- [Termux:App_v118.0 from F-Droid](https://f-droid.org/repo/com.termux_118.apk)
-
-## Como Instalar?
-Siga os passos abaixo.
-
-### Configurando
-atualizar os repositórios e permitir acesso a memória interna.
-```sh
-yes | pkg update -y && yes | pkg upgrade -y && termux-setup-storage
-```
-
-### Instalando
-armazenar o arquivo virtual em cache e executa-lo.
-```sh
-curl -s https://raw.githubusercontent.com/Device-Black/Termux-Pawn/DeviceBlack/install.sh -o install.sh
-bash install.sh
-```
-
-## Como Desinstalar?
-Siga os passos abaixo.
-
-### Desinstalando
-remover os arquivos do compilador.
-```sh
-rm $PREFIX/bin/pawn* && rm $PREFIX/lib/libpawnc.so && exit
-```
-
-# Termux-Pawn
-
 ### Português
 
 **Instruções de Instalação:**
@@ -42,14 +11,24 @@ Para instalar o compilador Pawn no Termux, execute o seguinte comando no termina
 curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceBlack/quick-install.sh -s -o quick-install.sh && bash quick-install.sh
 ```
 
-| Features | armhf | armv7l | armv8l | aarch64 |
+| binários | armhf | armv7l | armv8l | aarch64 |
 | -------- | ----- | ------ | ------ | ------- |
 | compilador | sim | sim | sim | sim |
+| desmontador | sim | sim | sim | sim |
+| interpretador | sim | sim | sim | nao |
 
 **Créditos:**
 - Criador: CompuPhase
-- Versão 3.X.X: Zeex
-- Portador para Termux: DeviceWhite
+- Versão Usada: Zeex 3.10.10
+- Portador Por: DeviceWhite e Beerld
+
+- [Instale o Termux aqui](https://f-droid.org/repo/com.termux_118.apk)
+
+Antes de instalar o compilador, certifique-se de atualizar os pacotes:
+
+```bash
+yes | pkg upd -y && yes | pkg upg -y
+```
 
 ---
 
@@ -63,10 +42,23 @@ To install the Pawn compiler on Termux, run the following command in the termina
 curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceBlack/quick-install.sh -s -o quick-install.sh && bash quick-install.sh
 ```
 
+| binaries | armhf | armv7l | armv8l | aarch64 |
+| -------- | ----- | ------ | ------ | ------- |
+| compiler | yes | yes | yes | yes |
+| disassembler | yes | yes | yes | yes |
+| interpreter | yes | yes | yes | no |
+
 **Credits:**
 - Creator: CompuPhase
-- Version 3.X.X: Zeex
-- Port to Termux: DeviceWhite
+- Used version: Zeex 3.10.10
+- Ported By: DeviceWhite & Beerld
+
+- [Install Termux here](https://f-droid.org/repo/com.termux_118.apk)
+
+Before installing the compiler, be sure to update the packages:
+
+```bash
+yes | pkg upd -y && yes | pkg upg -y
+```
 
 ---
-**Note:** Feel free to customize the titles or content as needed.
