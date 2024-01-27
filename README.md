@@ -23,7 +23,7 @@ curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceBlack/quick-i
 - Portador Por: DeviceWhite e BeerlID
 
 
->>> [Instale o Termux aqui](https://f-droid.org/repo/com.termux_118.apk)
+> [Instale o Termux aqui](https://f-droid.org/repo/com.termux_118.apk)
 
 Antes de instalar o compilador, certifique-se de atualizar os pacotes:
 
@@ -55,7 +55,7 @@ curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceBlack/quick-i
 - Ported By: DeviceWhite & BeerlID
 
 
->>> [Install Termux here](https://f-droid.org/repo/com.termux_118.apk)
+> [Install Termux here](https://f-droid.org/repo/com.termux_118.apk)
 
 Before installing the compiler, be sure to update the packages:
 
