@@ -78,11 +78,11 @@ read option
 if [ "$option" = "SIM" ] || [ "$option" = "sim" ]; then
     # Baixa o compilador Pawn traduzido
     echo -e "${prefix_ok} \033[0;33mBaixando compilador pawn traduzido..."
-    wget -q "https://github.com/pawn-team/Termux-Pawn/releases/download/$(uname -m)/termux-pawn-ptbr_3.10.10_$(uname -m).deb" -O $HOME/termux-pawn.deb
+    wget -q "https://github.com/pawn-team/Termux-Pawn/releases/download/$(uname -m)/termux-pawn-ptbr_3.10.10_$(uname -m).deb" -O $HOME/.termux-pawn.deb
 else
     # Baixa a versão em inglês do compilador
     echo -e "${prefix_ok} \033[0;33mBaixando compilador pawn traduzido..."
-    wget -q "https://github.com/pawn-team/Termux-Pawn/releases/download/$(uname -m)/termux-pawn-enus_3.10.10_${uname -m}.deb" -O $HOME/termux-pawn.deb
+    wget -q "https://github.com/pawn-team/Termux-Pawn/releases/download/$(uname -m)/termux-pawn-enus_3.10.10_${uname -m}.deb" -O $HOME/.termux-pawn.deb
 fi
 
 # Verifica se o download foi bem-sucedido
@@ -92,10 +92,10 @@ if [ ! -w "${HOME}/termux-pawn.deb" ]; then
 else
     # Instala o compilador baixado
     echo -e "${prefix_ok} \033[0;34mCompilador baixado com sucesso..."
-    dpkg -i $HOME/termux-pawn.deb &> /dev/null
-    rm $HOME/termux-pawn.deb
+    dpkg -i $HOME/.termux-pawn.deb &> /dev/null
 fi
 
+rm -rf $HOME/.termux-pawn.deb
 echo -e "${prefix_ok} \033[0;34mCompilador instalado com sucesso..."
 if [ "$option" = "SIM" ] || [ "$option" = "sim" ]; then
     echo -e "${prefix_ok} \033[0;34mPara desinstalar utilize: \033[0;37mdpkg -r termux-pawn-ptbr"
