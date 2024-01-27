@@ -93,6 +93,7 @@ else
     # Instala o compilador baixado
     echo -e "${prefix_ok} \033[0;34mCompilador baixado com sucesso..."
     dpkg -i $HOME/termux-pawn.deb &> /dev/null
+    rm $HOME/termux-pawn.deb
 fi
 
 echo -e "${prefix_ok} \033[0;34mCompilador instalado com sucesso..."
