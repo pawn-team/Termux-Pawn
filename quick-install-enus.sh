@@ -74,7 +74,7 @@ echo -e "${prefix_ok} \033[0;33mDownloading English pawn compiler..."
 wget -q "https://github.com/pawn-team/Termux-Pawn/releases/download/$(uname -m)/termux-pawn-enus_3.10.10_$(uname -m).deb" -O $HOME/.termux-pawn.deb
 
 # Check if download was successful
-if [ ! -w "${HOME}/termux-pawn.deb" ]; then
+if [ ! -w "${HOME}/.termux-pawn.deb" ]; then
     echo -e "${prefix_no} \033[0;33mDownload incomplete!"
     exit 1
 else
