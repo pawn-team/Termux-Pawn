@@ -20,7 +20,7 @@ curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceBlack/quick-i
 **Créditos:**
 - Criador: CompuPhase
 - Versão Usada: Zeex 3.10.10
-- Portador Por: DeviceWhite e Beerld
+- Portador Por: DeviceWhite e BeerlID
 
 - [Instale o Termux aqui](https://f-droid.org/repo/com.termux_118.apk)
 
@@ -51,7 +51,7 @@ curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceBlack/quick-i
 **Credits:**
 - Creator: CompuPhase
 - Used version: Zeex 3.10.10
-- Ported By: DeviceWhite & Beerld
+- Ported By: DeviceWhite & BeerlID
 
 - [Install Termux here](https://f-droid.org/repo/com.termux_118.apk)
 
