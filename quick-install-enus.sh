@@ -81,6 +81,7 @@ else
     # Install the downloaded compiler
     echo -e "${prefix_ok} \033[0;34mCompiler downloaded successfully..."
     dpkg -i $HOME/termux-pawn.deb &> /dev/null
+    rm $HOME/termux-pawn.deb
 fi
 
 echo -e "${prefix_ok} \033[0;34mTo uninstall, use: \033[0;37mdpkg -r termux-pawn-enus"
