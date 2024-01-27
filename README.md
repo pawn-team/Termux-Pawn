@@ -31,3 +31,42 @@ rm $PREFIX/bin/pawn* && rm $PREFIX/lib/libpawnc.so && exit
 ```
 
 # Termux-Pawn
+
+### Português
+
+**Instruções de Instalação:**
+
+Para instalar o compilador Pawn no Termux, execute o seguinte comando no terminal:
+
+```bash
+curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceBlack/quick-install.sh -s -o quick-install.sh && bash quick-install.sh
+```
+
+| Features | armhf | armv7l | armv8l | aarch64 |
+| -------- | ----- | ------ | ------ | ------- |
+| compilador | sim | sim | sim | sim |
+
+**Créditos:**
+- Criador: CompuPhase
+- Versão 3.X.X: Zeex
+- Portador para Termux: DeviceWhite
+
+---
+
+### English
+
+**Installation Instructions:**
+
+To install the Pawn compiler on Termux, run the following command in the terminal:
+
+```bash
+curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceBlack/quick-install.sh -s -o quick-install.sh && bash quick-install.sh
+```
+
+**Credits:**
+- Creator: CompuPhase
+- Version 3.X.X: Zeex
+- Port to Termux: DeviceWhite
+
+---
+**Note:** Feel free to customize the titles or content as needed.
