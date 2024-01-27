@@ -4,12 +4,13 @@ ip_info=$(curl https://freeipapi.com/api/json/$your_ip)
 if echo "$ip_info" | grep -q "Could not resolve host"; then
 	echo -e "\033[1;31mFAILED CONNECTION\033[0;37m"
 else
+    echo -e "\033[1;35m Starting, please wait...\033[0;37m"
 	if echo "$ip_info" | grep -q "Brazil"; then
-		wget https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceBlack/quick-install-ptbr.sh
+		wget -q https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceBlack/quick-install-ptbr.sh
 		bash quick-install-ptbr.sh
 		rm quick-install-ptbr.sh
 	else
-		wget https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceBlack/quick-install-enus.sh
+		wget -q https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceBlack/quick-install-enus.sh
 		bash quick-install-enus.sh
 		rm quick-install-enus.sh
 	fi
