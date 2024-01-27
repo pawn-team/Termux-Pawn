@@ -12,11 +12,11 @@ prefix_no="\033[1;31m[ \033[1;37m- \033[1;31m]"
 
 # Check write permission for internal storage
 if [ ! -w "/sdcard" ]; then
-    echo -e "${prefix_no} \033[0;33mUnable to access internal storage."
-    echo -e "${prefix_no} \033[0;33mUse the command: \033[0;37mtermux-setup-storage"
-    exit 1
+	echo -e "${prefix_no} \033[0;33mUnable to access internal storage."
+	echo -e "${prefix_no} \033[0;33mUse the command: \033[0;37mtermux-setup-storage"
+	exit 1
 else
-    mkdir -p /sdcard/Pawn/includes
+	mkdir -p /sdcard/Pawn/includes
 fi
 
 # Ask user if they want to download includes for Open.MP
@@ -26,47 +26,47 @@ read option
 
 # Download and move includes based on user's choice
 if [ "$option" = "YES" ] || [ "$option" = "yes" ]; then
-    # Download and move Open.MP includes
-    echo -e "${prefix_ok} \033[0;34mDownloading pawn-stdlib..."
-    git clone -q https://github.com/openmultiplayer/omp-stdlib $root/omp-stdlib
+	# Download and move Open.MP includes
+	echo -e "${prefix_ok} \033[0;34mDownloading pawn-stdlib..."
+	git clone -q https://github.com/openmultiplayer/omp-stdlib $root/omp-stdlib
 
-    # Check if download was successful
-    if [ ! -w "${root}/omp-stdlib" ]; then
-        echo -e "${prefix_no} \033[0;33mDownload incomplete!"
-        exit 1
-    else
-        echo -e "${prefix_ok} \033[0;34mpawn-stdlib downloaded successfully..."
-        mv $root/omp-stdlib/*.inc /sdcard/Pawn
-        rm -rf $root/omp-stdlib
-    fi
+	# Check if download was successful
+	if [ ! -w "${root}/omp-stdlib" ]; then
+		echo -e "${prefix_no} \033[0;33mDownload incomplete!"
+		exit 1
+	else
+		echo -e "${prefix_ok} \033[0;34mpawn-stdlib downloaded successfully..."
+		mv $root/omp-stdlib/*.inc /sdcard/Pawn
+		rm -rf $root/omp-stdlib
+	fi
 else
-    # Download and move Pawn standard library includes
-    echo -e "${prefix_ok} \033[0;34mDownloading pawn-stdlib..."
-    git clone -q https://github.com/pawn-lang/pawn-stdlib $root/pawn-stdlib
+	# Download and move Pawn standard library includes
+	echo -e "${prefix_ok} \033[0;34mDownloading pawn-stdlib..."
+	git clone -q https://github.com/pawn-lang/pawn-stdlib $root/pawn-stdlib
 
-    # Check if download was successful
-    if [ ! -w "${root}/pawn-stdlib" ]; then
-        echo -e "${prefix_no} \033[0;33mDownload incomplete!"
-        exit 1
-    else
-        echo -e "${prefix_ok} \033[0;34mpawn-stdlib downloaded successfully..."
-        mv $root/pawn-stdlib/*.inc /sdcard/Pawn
-        rm -rf $root/pawn-stdlib
-    fi
+	# Check if download was successful
+	if [ ! -w "${root}/pawn-stdlib" ]; then
+		echo -e "${prefix_no} \033[0;33mDownload incomplete!"
+		exit 1
+	else
+		echo -e "${prefix_ok} \033[0;34mpawn-stdlib downloaded successfully..."
+		mv $root/pawn-stdlib/*.inc /sdcard/Pawn
+		rm -rf $root/pawn-stdlib
+	fi
 
-    # Download and move SAMP includes
-    echo -e "${prefix_ok} \033[0;34mDownloading samp-stdlib..."
-    git clone -q https://github.com/pawn-lang/samp-stdlib $root/samp-stdlib
+	# Download and move SAMP includes
+	echo -e "${prefix_ok} \033[0;34mDownloading samp-stdlib..."
+	git clone -q https://github.com/pawn-lang/samp-stdlib $root/samp-stdlib
 
-    # Check if download was successful
-    if [ ! -w "${root}/samp-stdlib" ]; then
-        echo -e "${prefix_no} \033[0;33mDownload incomplete!"
-        exit 1
-    else
-        echo -e "${prefix_ok} \033[0;34msamp-stdlib downloaded successfully..."
-        mv $root/samp-stdlib/*.inc /sdcard/Pawn
-        rm -rf $root/samp-stdlib
-    fi
+	# Check if download was successful
+	if [ ! -w "${root}/samp-stdlib" ]; then
+		echo -e "${prefix_no} \033[0;33mDownload incomplete!"
+		exit 1
+	else
+		echo -e "${prefix_ok} \033[0;34msamp-stdlib downloaded successfully..."
+		mv $root/samp-stdlib/*.inc /sdcard/Pawn
+		rm -rf $root/samp-stdlib
+	fi
 fi
 
 # Remove previous versions of the Pawn compiler
@@ -78,12 +78,12 @@ wget -q "https://github.com/pawn-team/Termux-Pawn/releases/download/$(uname -m)/
 
 # Check if download was successful
 if [ ! -w "${root}/termux-pawn.deb" ]; then
-    echo -e "${prefix_no} \033[0;33mDownload incomplete!"
-    exit 1
+	echo -e "${prefix_no} \033[0;33mDownload incomplete!"
+	exit 1
 else
-    # Install the downloaded compiler
-    echo -e "${prefix_ok} \033[0;34mCompiler downloaded successfully..."
-    dpkg -i $root/termux-pawn.deb &> /dev/null
+	# Install the downloaded compiler
+	echo -e "${prefix_ok} \033[0;34mCompiler downloaded successfully..."
+	dpkg -i $root/termux-pawn.deb &> /dev/null
 fi
 
 rm -rf $root/termux-pawn.deb
@@ -97,9 +97,9 @@ profile_path="${PREFIX}/etc/profile"
 
 # Check if the alias already exists in the profile
 if grep -q "$text_alias" "$profile_path"; then
-    # Remove the existing alias
-    grep -v "$text_alias" "$profile_path" > .profile
-    mv .profile $profile_path
+	# Remove the existing alias
+	grep -v "$text_alias" "$profile_path" > .profile
+	mv .profile $profile_path
 fi
 
 # Add the new alias to the profile
