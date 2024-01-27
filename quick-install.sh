@@ -6,11 +6,11 @@ if echo "$ip_info" | grep -q "Could not resolve host"; then
 else
     echo -e "\033[1;35m Starting, please wait...\033[0;37m"
 	if echo "$ip_info" | grep -q "Brazil"; then
-		wget -q https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceBlack/quick-install-ptbr.sh
+		wget -q https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-install-ptbr.sh
 		bash quick-install-ptbr.sh
 		rm quick-install-ptbr.sh
 	else
-		wget -q https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceBlack/quick-install-enus.sh
+		wget -q https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-install-enus.sh
 		bash quick-install-enus.sh
 		rm quick-install-enus.sh
 	fi
