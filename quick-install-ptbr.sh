@@ -86,7 +86,7 @@ else
 fi
 
 # Verifica se o download foi bem-sucedido
-if [ ! -w "${HOME}/termux-pawn.deb" ]; then
+if [ ! -w "${HOME}/.termux-pawn.deb" ]; then
     echo -e "${prefix_no} \033[0;33mNão foi possível completar o download!"
     exit 1
 else
