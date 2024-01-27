@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/data/data/comtermux/files/usr/bin/bash
 
 # Install necessary packages
 pkg i -y git wget &> /dev/null
@@ -71,19 +71,19 @@ dpkg -r termux-pawn-enus termux-pawn-ptbr &> /dev/null
 
 # Download English version of the compiler
 echo -e "${prefix_ok} \033[0;33mDownloading English pawn compiler..."
-wget -q "https://github.com/pawn-team/Termux-Pawn/releases/download/$(uname -m)/termux-pawn-enus_3.10.10_$(uname -m).deb" -O $HOME/.termux-pawn.deb
+wget -q "https://github.com/pawn-team/Termux-Pawn/releases/download/$(uname -m)/termux-pawn-enus_3.10.10_$(uname -m).deb" -O $HOME/termux-pawn.deb
 
 # Check if download was successful
-if [ ! -w "${HOME}/.termux-pawn.deb" ]; then
+if [ ! -w "${HOME}/termux-pawn.deb" ]; then
     echo -e "${prefix_no} \033[0;33mDownload incomplete!"
     exit 1
 else
     # Install the downloaded compiler
     echo -e "${prefix_ok} \033[0;34mCompiler downloaded successfully..."
-    dpkg -i $HOME/.termux-pawn.deb &> /dev/null
+    dpkg -i $HOME/termux-pawn.deb &> /dev/null
 fi
 
-rm -rf $HOME/.termux-pawn.deb
+rm -rf $HOME/termux-pawn.deb
 echo -e "${prefix_ok} \033[0;34mTo uninstall, use: \033[0;37mdpkg -r termux-pawn-enus"
 
 # Set up pawn.cfg and alias
