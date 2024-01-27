@@ -1,5 +1,5 @@
-your_ip=$(curl -s https://freeipapi.com)
-ip_info=$(curl -s https://freeipapi.com/api/json/$your_ip)
+your_ip=$(curl https://freeipapi.com -s)
+ip_info=$(curl https://freeipapi.com/api/json/$your_ip -s)
 
 if echo "$ip_info" | grep -q "Could not resolve host"; then
 	echo -e "\033[1;31mFAILED CONNECTION\033[0;37m"
