@@ -16,7 +16,7 @@ if [ ! -w "/sdcard" ]; then
 	echo -e "${prefix_no} \033[0;33mUtilize o comando: \033[0;37mtermux-setup-storage"
 	exit 1
 else
-	mkdir -p /sdcard/Pawn/includes
+	mkdir -p /sdcard/Pawn
 fi
 
 # Pergunta ao usuário se deseja baixar includes para o Open.MP
