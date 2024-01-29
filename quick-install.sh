@@ -9,12 +9,12 @@ else
 	echo -e "\033[1;35m Starting, please wait...\033[0;37m"
 	if echo "$ip_info" | grep -q "Brazil"; then
 		wget -q https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-install-ptbr.sh
-		echo -e "\033[1;33mRunning quick-install-ptbr.sh"
+		echo -e "\033[1;33mRunning quick-install-ptbr.sh\n"
 		bash quick-install-ptbr.sh
 		rm quick-install-ptbr.sh
 	else
 		wget -q https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-install-enus.sh
-		echo -e "\033[1;33mRunning quick-install-enus.sh"
+		echo -e "\033[1;33mRunning quick-install-enus.sh\n"
 		bash quick-install-enus.sh
 		rm quick-install-enus.sh
 	fi
