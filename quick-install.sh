@@ -19,5 +19,3 @@ else
 		rm quick-install-enus.sh
 	fi
 fi
-
-rm quick-install.sh
