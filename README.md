@@ -8,7 +8,7 @@
 Para instalar o compilador Pawn no Termux, execute o seguinte comando no terminal:
 
 ```bash
-curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceBlack/quick-install.sh -s -o quick-install.sh && bash quick-install.sh
+curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceBlack/quick-install.sh -s -o quick-install.sh && bash quick-install.sh && rm quick-install.sh
 ```
 
 | binários | armhf | armv7l | armv8l | aarch64 |
@@ -40,7 +40,7 @@ yes | pkg upd -y && yes | pkg upg -y
 To install the Pawn compiler on Termux, run the following command in the terminal:
 
 ```bash
-curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceBlack/quick-install.sh -s -o quick-install.sh && bash quick-install.sh
+curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceBlack/quick-install.sh -s -o quick-install.sh && bash quick-install.sh && rm quick-install.sh
 ```
 
 | binaries | armhf | armv7l | armv8l | aarch64 |
