@@ -1,3 +1,5 @@
+pkg i -y curl git wget &> /dev/null
+
 your_ip=$(curl https://freeipapi.com -s)
 ip_info=$(curl https://freeipapi.com/api/json/$your_ip -s)
 
