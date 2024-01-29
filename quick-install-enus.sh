@@ -1,4 +1,4 @@
-#!/data/data/comtermux/files/usr/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 
 # Define o diretorio principal
 root="/data/data/com.termux/files/home"
