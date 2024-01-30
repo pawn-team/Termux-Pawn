@@ -27,7 +27,7 @@ read option
 # Download and move includes based on user's choice
 if [ "$option" = "YES" ] || [ "$option" = "yes" ]; then
 	# Download and move Open.MP includes
-	echo -e "${prefix_ok} \033[0;34mDownloading pawn-stdlib..."
+	echo -e "${prefix_ok} \033[0;34mDownloading omp-stdlib..."
 	git clone -q https://github.com/openmultiplayer/omp-stdlib $root/omp-stdlib
 
 	# Check if download was successful
