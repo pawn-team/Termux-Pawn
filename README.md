@@ -58,7 +58,8 @@ curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-i
 
 > [Install Termux here](https://f-droid.org/repo/com.termux_118.apk)
 
-Before installing the compiler, be sure to update the packages:
+> [!Warning]
+> Before installing the compiler, be sure to update the packages:
 
 ```bash
 yes | pkg upd -y && yes | pkg upg -y
