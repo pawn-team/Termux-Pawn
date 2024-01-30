@@ -84,7 +84,7 @@ if [ "$option" = "SIM" ] || [ "$option" = "sim" ]; then
 	wget -q "https://github.com/pawn-team/Termux-Pawn/releases/download/$(uname -m)/termux-pawn-ptbr_3.10.10_$(uname -m).deb" -O $root/termux-pawn.deb
 else
 	# Baixa a versão em inglês do compilador
-	echo -e "${prefix_ok} \033[0;33mBaixando compilador pawn traduzido..."
+	echo -e "${prefix_ok} \033[0;33mBaixando compilador original \033[1;37m(ingles)\033[0;33m..."
 	wget -q "https://github.com/pawn-team/Termux-Pawn/releases/download/$(uname -m)/termux-pawn-enus_3.10.10_$(uname -m).deb" -O $root/termux-pawn.deb
 fi
 
