@@ -27,7 +27,7 @@ read option
 # Baixa e move includes com base na escolha do usuário
 if [ "$option" = "SIM" ] || [ "$option" = "sim" ]; then
 	# Baixa e move includes do Open.MP
-	echo -e "${prefix_ok} \033[0;34mBaixando pawn-stdlib..."
+	echo -e "${prefix_ok} \033[0;34mBaixando omp-stdlib..."
 	git clone -q https://github.com/openmultiplayer/omp-stdlib $root/omp-stdlib
 
 	# Verifica se o download foi bem-sucedido
