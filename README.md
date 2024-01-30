@@ -20,7 +20,7 @@ curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-i
 **Créditos:**
 - Criador: CompuPhase
 - Versão Usada: Zeex 3.10.10
-- Portador Por: DeviceWhite e BeerlID
+- Portado Por: DeviceWhite e BeerlID
 
 
 > [!Warning]
