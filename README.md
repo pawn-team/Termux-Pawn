@@ -26,10 +26,10 @@ curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-i
 > [!Warning]
 > [Instale o Termux aqui](https://f-droid.org/repo/com.termux_118.apk) <br/>
 > Antes de instalar o compilador, certifique-se de atualizar os pacotes:
-
-```bash
-yes | pkg upd -y && yes | pkg upg -y
-```
+>
+> ```bash
+> yes | pkg upd -y && yes | pkg upg -y
+> ```
 
 **Tutorial em Video:**
 [![Video Tutorial](https://i.ibb.co/tqVTpq5/20240130-193938.jpg)](http://www.youtube.com/watch?v=GKRI3ec9z2Y "Termux Pawn: Compilador traduzido em PTBR!")
