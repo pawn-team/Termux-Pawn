@@ -24,8 +24,7 @@ curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-i
 
 
 > [!Warning]
-> [Instale o Termux aqui](https://f-droid.org/repo/com.termux_118.apk)
-
+> [Instale o Termux aqui](https://f-droid.org/repo/com.termux_118.apk) <br/>
 > Antes de instalar o compilador, certifique-se de atualizar os pacotes:
 
 ```bash
