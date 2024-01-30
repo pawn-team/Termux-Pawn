@@ -35,7 +35,7 @@ if [ "$option" = "YES" ] || [ "$option" = "yes" ]; then
 		echo -e "${prefix_no} \033[0;33mDownload incomplete!"
 		exit 1
 	else
-		echo -e "${prefix_ok} \033[0;34mpawn-stdlib downloaded successfully..."
+		echo -e "${prefix_ok} \033[0;34momp-stdlib downloaded successfully..."
 		mv $root/omp-stdlib/*.inc /sdcard/Pawn
 		rm -rf $root/omp-stdlib
 	fi
