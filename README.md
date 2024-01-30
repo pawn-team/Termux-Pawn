@@ -31,6 +31,8 @@ curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-i
 yes | pkg upd -y && yes | pkg upg -y
 ```
 
+**Tutorial em Video:**
+[![Video Tutorial](http://img.youtube.com/vi/GKRI3ec9z2Y/0.jpg)](http://www.youtube.com/watch?v=GKRI3ec9z2Y "Termux Pawn: Compilador traduzido em PTBR!")
 ---
 
 ### English
