@@ -35,7 +35,7 @@ if [ "$option" = "SIM" ] || [ "$option" = "sim" ]; then
 		echo -e "${prefix_no} \033[0;33mNão foi possível completar o download!"
 		exit 1
 	else
-		echo -e "${prefix_ok} \033[0;34mpawn-stdlib baixado com sucesso..."
+		echo -e "${prefix_ok} \033[0;34momp-stdlib baixado com sucesso..."
 		mv $root/omp-stdlib/*.inc /sdcard/Pawn
 		rm -rf $root/omp-stdlib
 	fi
