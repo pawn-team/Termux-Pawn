@@ -2,7 +2,7 @@
 	"control": {
 		"Package": "termux-pawn-ptbr",
 		"Version": "3.10.10",
-		"Architecture": "arm",
+		"Architecture": "all",
 		"Maintainer": "DeviceWhite <devicewhite@proton.me>",
 		"Depends": "libandroid-support",
 		"Homepage": "https://github.com/pawn-team",
