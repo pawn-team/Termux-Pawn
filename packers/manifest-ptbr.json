@@ -13,16 +13,13 @@
 
 	"data_files": {
 		"bin/pawncc": {
-			"source": "pawncc",
-			"set_shebang": "#!/data/data/com.termux/files/usr/bin/bash"
+			"source": "pawncc"
 		},
 		"bin/pawndisasm": {
-			"source": "pawndisasm",
-			"set_shebang": "#!/data/data/com.termux/files/usr/bin/bash"
+			"source": "pawndisasm"
 		},
 		"bin/pawnruns": {
-			"source": "pawnruns",
-			"set_shebang": "#!/data/data/com.termux/files/usr/bin/bash"
+			"source": "pawnruns"
 		},
 		"lib/libpawnc.so": {
 			"source": "libpawnc.so"
