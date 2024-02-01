@@ -1,1 +1,31 @@
+{
+	"control": {
+		"Package": "termux-pawn-ptbr",
+		"Version": "3.10.10",
+		"Architecture": "arm",
+		"Maintainer": "DeviceWhite <devicewhite@proton.me>",
+		"Depends": "libandroid-support",
+		"Homepage": "https://github.com/pawn-team",
+		"Description":  "Isso é um compilador da linguagem Pawn, criado para compilar scripts do SA-MP"
+	},
 
+	"installation_prefix": "/data/data/com.termux/files/usr",
+
+	"data_files": {
+		"bin/pawncc": {
+			"source": "pawncc",
+			"set_shebang": "#!/data/data/com.termux/files/usr/bin/bash"
+		},
+		"bin/pawndisasm": {
+			"source": "pawndisasm",
+			"set_shebang": "#!/data/data/com.termux/files/usr/bin/bash"
+		},
+		"bin/pawnruns": {
+			"source": "pawnruns",
+			"set_shebang": "#!/data/data/com.termux/files/usr/bin/bash"
+		},
+		"lib/libpawnc.so": {
+			"source": "libpawnc.so"
+		}
+	}
+}
