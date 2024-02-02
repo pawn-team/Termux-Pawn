@@ -4,6 +4,10 @@
 
 ### Português
 
+> [!Warning]
+> Ainda está em processo de adaptação, pode não funcionar no seu dispositivo!
+> Previsão de atualização até: 09/02/2024
+
 **Instruções de Instalação:**
 
 Para instalar o compilador Pawn no Termux, execute o seguinte comando no terminal:
@@ -38,6 +42,10 @@ curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-i
 ---
 
 ### English
+
+> [!Warning]
+> It is still in the adaptation process, it may not work on your device!
+> Expected update until: 02/09/2024
 
 **Installation Instructions:**
 
