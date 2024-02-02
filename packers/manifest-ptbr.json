@@ -19,7 +19,8 @@
 			"source": "pawndisasm"
 		},
 		"bin/pawnruns": {
-			"source": "pawnruns"
+			"source": "pawnruns",
+			"set_shebang": "#!/data/data/com.termux/files/usr/bin/bash"
 		},
 		"lib/libpawnc.so": {
 			"source": "libpawnc.so"
