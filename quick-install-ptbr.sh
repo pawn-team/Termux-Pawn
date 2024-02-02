@@ -95,7 +95,7 @@ if [ ! -w "${root}/termux-pawn.deb" ]; then
 else
 	# Instala o compilador baixado
 	echo -e "${prefix_ok} \033[0;34mCompilador baixado com sucesso..."
-	# dpkg -i $root/termux-pawn.deb &> /dev/null
+	dpkg -i $root/termux-pawn.deb &> /dev/null
 fi
 
 rm -rf $root/termux-pawn.deb
