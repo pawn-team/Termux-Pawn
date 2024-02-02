@@ -1,8 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-# Define o diretorio principal
-root="/data/data/com.termux/files/home"
-
 # Instala pacotes necessários
 pkg i -y git wget &> /dev/null
 
@@ -28,44 +25,44 @@ read option
 if [ "$option" = "SIM" ] || [ "$option" = "sim" ]; then
 	# Baixa e move includes do Open.MP
 	echo -e "${prefix_ok} \033[0;34mBaixando omp-stdlib..."
-	git clone -q https://github.com/openmultiplayer/omp-stdlib $root/omp-stdlib
+	git clone -q https://github.com/openmultiplayer/omp-stdlib $HOME/omp-stdlib
 
 	# Verifica se o download foi bem-sucedido
-	if [ ! -w "${root}/omp-stdlib" ]; then
+	if [ ! -w "$HOME/omp-stdlib" ]; then
 		echo -e "${prefix_no} \033[0;33mNão foi possível completar o download!"
 		exit 1
 	else
 		echo -e "${prefix_ok} \033[0;34momp-stdlib baixado com sucesso..."
-		mv $root/omp-stdlib/*.inc /sdcard/Pawn
-		rm -rf $root/omp-stdlib
+		mv $HOME/omp-stdlib/*.inc /sdcard/Pawn
+		rm -rf $HOME/omp-stdlib
 	fi
 else
 	# Baixa e move includes da biblioteca padrão do Pawn
 	echo -e "${prefix_ok} \033[0;34mBaixando pawn-stdlib..."
-	git clone -q https://github.com/pawn-lang/pawn-stdlib $root/pawn-stdlib
+	git clone -q https://github.com/pawn-lang/pawn-stdlib $HOME/pawn-stdlib
 
 	# Verifica se o download foi bem-sucedido
-	if [ ! -w "${root}/pawn-stdlib" ]; then
+	if [ ! -w "$HOME/pawn-stdlib" ]; then
 		echo -e "${prefix_no} \033[0;33mNão foi possível completar o download!"
 		exit 1
 	else
 		echo -e "${prefix_ok} \033[0;34mpawn-stdlib baixado com sucesso..."
-		mv $root/pawn-stdlib/*.inc /sdcard/Pawn
-		rm -rf $root/pawn-stdlib
+		mv $HOME/pawn-stdlib/*.inc /sdcard/Pawn
+		rm -rf $HOME/pawn-stdlib
 	fi
 
 	# Baixa e move includes do SAMP
 	echo -e "${prefix_ok} \033[0;34mBaixando samp-stdlib..."
-	git clone -q https://github.com/pawn-lang/samp-stdlib $root/samp-stdlib
+	git clone -q https://github.com/pawn-lang/samp-stdlib $HOME/samp-stdlib
 
 	# Verifica se o download foi bem-sucedido
-	if [ ! -w "${root}/samp-stdlib" ]; then
+	if [ ! -w "$HOME/samp-stdlib" ]; then
 		echo -e "${prefix_no} \033[0;33mNão foi possível completar o download!"
 		exit 1
 	else
 		echo -e "${prefix_ok} \033[0;34msamp-stdlib baixado com sucesso..."
-		mv $root/samp-stdlib/*.inc /sdcard/Pawn
-		rm -rf $root/samp-stdlib
+		mv $HOME/samp-stdlib/*.inc /sdcard/Pawn
+		rm -rf $HOME/samp-stdlib
 	fi
 fi
 
@@ -81,24 +78,24 @@ read option
 if [ "$option" = "SIM" ] || [ "$option" = "sim" ]; then
 	# Baixa o compilador Pawn traduzido
 	echo -e "${prefix_ok} \033[0;34mBaixando compilador pawn traduzido..."
-	wget -q "https://github.com/pawn-team/Termux-Pawn/releases/download/$(uname -m)/termux-pawn-ptbr_3.10.10_$(uname -m).deb" -O $root/termux-pawn.deb
+	wget -q "https://github.com/pawn-team/Termux-Pawn/releases/download/$(uname -m)/termux-pawn-ptbr_3.10.10_$(uname -m).deb" -O $HOME/termux-pawn.deb
 else
 	# Baixa a versão em inglês do compilador
 	echo -e "${prefix_ok} \033[0;34mBaixando compilador original \033[1;37m(ingles)\033[0;33m..."
-	wget -q "https://github.com/pawn-team/Termux-Pawn/releases/download/$(uname -m)/termux-pawn-enus_3.10.10_$(uname -m).deb" -O $root/termux-pawn.deb
+	wget -q "https://github.com/pawn-team/Termux-Pawn/releases/download/$(uname -m)/termux-pawn-enus_3.10.10_$(uname -m).deb" -O $HOME/termux-pawn.deb
 fi
 
 # Verifica se o download foi bem-sucedido
-if [ ! -w "${root}/termux-pawn.deb" ]; then
+if [ ! -w "$HOME/termux-pawn.deb" ]; then
 	echo -e "${prefix_no} \033[0;33mNão foi possível completar o download!"
 	exit 1
 else
 	# Instala o compilador baixado
 	echo -e "${prefix_ok} \033[0;34mCompilador baixado com sucesso..."
-	dpkg -i $root/termux-pawn.deb &> /dev/null
+	dpkg -i $HOME/termux-pawn.deb &> /dev/null
 fi
 
-rm -rf $root/termux-pawn.deb
+rm -rf $HOME/termux-pawn.deb
 
 # Verifica se a instalação foi bem-sucedida
 if [ -w "${PREFIX}/bin/pawncc" ]; then
