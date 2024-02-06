@@ -74,15 +74,21 @@ echo -e "${prefix_ok} \033[1;36mDeseja instalar o compilador traduzido?"
 echo -n -e "${prefix_ok} \033[1;36mDigite \033[1;37mSIM \033[1;36mou \033[1;37mNAO\033[1;36m: \033[0;37m"
 read option
 
+# Correção do Link
+final="arm"
+if [ "$(uname -m)" = "aarch64" ]; then
+	final="aarch64"
+fi
+
 # Baixa o compilador traduzido com base na escolha do usuário
 if [ "$option" = "SIM" ] || [ "$option" = "sim" ]; then
 	# Baixa o compilador Pawn traduzido
 	echo -e "${prefix_ok} \033[0;34mBaixando compilador pawn traduzido..."
-	wget -q "https://github.com/pawn-team/Termux-Pawn/releases/download/$(uname -m)/termux-pawn-ptbr_3.10.10_$(uname -m).deb" -O $HOME/termux-pawn.deb
+	wget -q "https://github.com/pawn-team/Termux-Pawn/releases/download/$(uname -m)/termux-pawn-ptbr_3.10.10_${final}.deb" -O $HOME/termux-pawn.deb
 else
 	# Baixa a versão em inglês do compilador
 	echo -e "${prefix_ok} \033[0;34mBaixando compilador original \033[1;37m(ingles)\033[0;33m..."
-	wget -q "https://github.com/pawn-team/Termux-Pawn/releases/download/$(uname -m)/termux-pawn-enus_3.10.10_$(uname -m).deb" -O $HOME/termux-pawn.deb
+	wget -q "https://github.com/pawn-team/Termux-Pawn/releases/download/$(uname -m)/termux-pawn-enus_3.10.10_${final}.deb" -O $HOME/termux-pawn.deb
 fi
 
 # Verifica se o download foi bem-sucedido
