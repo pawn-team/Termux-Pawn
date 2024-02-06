@@ -4,16 +4,12 @@
 
 ### Português
 
-> [!Warning]
-> Ainda está em processo de adaptação, pode não funcionar no seu dispositivo!
-> Previsão de atualização até: 09/02/2024
-
 **Instruções de Instalação:**
 
 Para instalar o compilador Pawn no Termux, execute o seguinte comando no terminal:
 
 ```bash
-curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-install.sh -s -o quick-install.sh && bash quick-install.sh && rm quick-install.sh
+wget https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-install-ptbr.sh && bash quick-install-ptbr.sh && rm quick-install-ptbr.sh && exit 1
 ```
 
 | binários | armhf | armv7l | armv8l | aarch64 |
@@ -52,7 +48,7 @@ curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-i
 To install the Pawn compiler on Termux, run the following command in the terminal:
 
 ```bash
-curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-install.sh -s -o quick-install.sh && bash quick-install.sh && rm quick-install.sh
+wget https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-install-ptbr.sh && bash quick-install-enus.sh && rm quick-install-enus.sh && exit 1
 ```
 
 | binaries | armhf | armv7l | armv8l | aarch64 |
