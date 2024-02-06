@@ -76,7 +76,7 @@ read option
 
 # Correção do Link
 final="arm"
-if [ "$(uname -m)" = "aarch64" ]; then
+if [ ! "$(uname -m)" = "aarch64" ]; then
 	final="aarch64"
 fi
 
