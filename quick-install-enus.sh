@@ -1,5 +1,9 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+# Installing necessary packages
+pkg install -y git wget curl &> /dev/null
+
+
 # Define output prefixes for messages
 ERROR="\033[1;31m[ \033[1;37m- \033[1;31m] \033[1;33m"
 ALERT="\033[1;33m[ \033[1;37m- \033[1;33m] \033[1;36m"
