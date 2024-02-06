@@ -1,9 +1,14 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+# Instalando pacotes nescessários
+pkg install -y git wget curl &> /dev/null
+
+
 # Define prefixos de saída para mensagens
 ERROR="\033[1;31m[ \033[1;37m- \033[1;31m] \033[1;33m"
 ALERT="\033[1;33m[ \033[1;37m- \033[1;33m] \033[1;36m"
 NORMAL="\033[1;32m[ \033[1;37m- \033[1;32m] \033[1;34m"
+
 
 # Verifica a versão do terminal Termux
 if [ ! "$TERMUX_VERSION" = "0.118.0" ] && [ ! "$TERMUX_VERSION" = "0.119.1" ]; then
