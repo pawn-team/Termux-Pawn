@@ -63,6 +63,7 @@ echo -e "$NORMAL Installing downloaded binaries"
 
 dpkg -r termux-pawn-ptbr termux-pawn-enus &> /dev/null
 dpkg -i $HOME/termux-pawn.deb &> /dev/null
+rm -rf $HOME/termux-pawn.deb
 
 echo "-Z+ -d3 -;+ -(+ -R+ -E+ -i:/sdcard/Pawn" > $PATH/pawn.cfg
 echo "alias pawncc='pawncc @$PATH/pawn.cfg'" > $PREFIX/etc/termux-pawn.sh
