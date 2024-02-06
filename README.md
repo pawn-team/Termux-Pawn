@@ -44,7 +44,7 @@ wget https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-i
 To install the Pawn compiler on Termux, run the following command in the terminal:
 
 ```bash
-wget https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-install-ptbr.sh && bash quick-install-enus.sh && rm quick-install-enus.sh && exit 1
+wget https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-install-enus.sh && bash quick-install-enus.sh && rm quick-install-enus.sh && exit 1
 ```
 
 | binaries | armhf | armv7l | armv8l | aarch64 |
