@@ -6,8 +6,8 @@ ALERT="\033[1;33m[ \033[1;37m- \033[1;33m] \033[1;36m"
 NORMAL="\033[1;32m[ \033[1;37m- \033[1;32m] \033[1;34m"
 
 # Verifica a versão do terminal Termux
-if [ ! "$TERMUX_VERSION" = "0.118.0" ]; then
-	echo -e "$ERROR Você precisa instalar instalar o Termux v0.118.0!"
+if [ ! "$TERMUX_VERSION" = "0.118.0" ] && [ ! "$TERMUX_VERSION" = "0.119.1" ]; then
+	echo -e "$ERROR Você precisa instalar instalar o Termux v0.118.0 ou v0.119.1!"
 	exit 1
 fi
 
