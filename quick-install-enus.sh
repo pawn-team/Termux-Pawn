@@ -7,8 +7,8 @@ NORMAL="\033[1;32m[ \033[1;37m- \033[1;32m] \033[1;34m"
 
 
 # Check Termux version
-if [ ! "$TERMUX_VERSION" = "0.118.0" ]; then
-	echo -e "$ERROR You need to install Termux v0.118.0!"
+if [ ! "$TERMUX_VERSION" = "0.118.0" ] && [ ! "$TERMUX_VERSION" = "0.119.1" ]; then
+	echo -e "$ERROR You need to install Termux v0.118.0 ou v0.119.1!"
 	exit 1
 fi
 
