@@ -89,7 +89,7 @@ echo -en "\n$ALERT Deseja instalar includes para o Open.MP? \033[1;37m[ y | N ]"
 read result
 
 mkdir -p "/sdcard/Pawn"
-rm -rf $HOME/*-stdlib
+rm -rf $HOME/omp-stdlib $HOME/pawn-stdlib $HOME/samp-stdlib
 
 if [ "$result" = "y" ] || [ "$result" = "Y" ]; then
 	git clone -q https://github.com/openmultiplayer/omp-stdlib $HOME/omp-stdlib 
