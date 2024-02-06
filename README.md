@@ -1,7 +1,7 @@
 # Pawn Compiler for Termux
 > [!Note]
 > Method by DeviceWhite and BeerlID
-> Updated on: 05/Feb/2024 - 23:42
+> Updated on: fev 05, 2024 23:43:19 BRT
 ### Português
 
 **Instruções de Instalação:**
