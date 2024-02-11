@@ -1,64 +1,74 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-function termux-pawn-config {
-	nano $PREFIX/Termux-Pawn/pawn.cfg
-}
-
-function termux-pawn-remove {
-	rm -rf $PREFIX/Termux-Pawn $EXTERNAL_STORAGE/Termux-Pawn $PREFIX/etc/profile.d/termux-pawn.sh
-	dpkg -r termux-pawn-enus termux-pawn-ptbr &> /dev/null
-	echo -e "\n\033[1;33m>> \033[1;37mCompiler uninstalled successfully"
-	echo -e "\n\033[1;33m>> \033[1;37mCompilador desinstalado com sucesso"
-}
-
-function termux-pawn-check {
-	res=$(curl -s "https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/2024-02-11%2001%3A10%3A21%20BRT.txt")
-	if [ "$res" = "updated" ]; then
-		echo -e "\n\033[1;33m>> \033[1;37mTermux-Pawn received an update, visit: \033[1;36mhttps://github.com/pawn-team/termux-pawn"
-		echo -e "\n\033[1;33m>> \033[1;37mO Termux-Pawn recebeu uma atualização, acesse: \033[1;36mhttps://github.com/pawn-team/termux-pawn"
-	fi
-}
-
-function termux-pawn-help {
-	echo -e "\n\n\033[1;33m>>>> TIPS : DICAS"
-	sleep 1
-	
-	echo -e "\n\033[1;33m>> \033[1;37mUse the command \033[1;36mtermux-pawn-help \033[1;37mto see this message"
-	echo -e "\n\033[1;33m>> \033[1;37mUtilize o comando \033[1;36mtermux-pawn-help \033[1;37mpara ver essa mensagem"
-	sleep 1
-	
-	echo -e "\n\033[1;33m>> \033[1;37mUse the command \033[1;36mtermux-pawn-config \033[1;37mto edit the compiler configuration"
-	echo -e "\n\033[1;33m>> \033[1;37mUtilize o comando \033[1;36mtermux-pawn-config \033[1;37mpara editar a configuração do compilador"
-	sleep 1
-	
-	echo -e "\n\033[1;33m>> \033[1;37mUse the command \033[1;36mtermux-pawn-check \033[1;37m to check if there has been an update"
-	echo -e "\n\033[1;33m>> \033[1;37mUtilize o comando \033[1;36mtermux-pawn-check \033[1;37mpara verificar se houve alguma atualização"
-	sleep 1
-	
-	echo -e "\n\033[1;33m>> \033[1;37mUse the command \033[1;36mtermux-pawn-remove \033[1;37m to uninstall the compiler"
-	echo -e "\n\033[1;33m>> \033[1;37mUtilize o comando \033[1;36mtermux-pawn-remove \033[1;37mpara desinstalar o compilador"
-	sleep 1
-	
-	echo -e "\n\033[1;33m>> \033[1;37mAdd your includes in the folder: \033[1;36m/sdcard/Termux-Pawn"
-	echo -e "\n\033[1;33m>> \033[1;37mAdicione suas includes na pasta: \033[1;36m/sdcard/Termux-Pawn"
-	sleep 1
-	
-	echo -e "\n\033[1;33m>> \033[1;37mYou can send suggestions and report issues to the email: \033[1;36mdevicewhite@proton.me"
-	echo -e "\n\033[1;33m>> \033[1;37mVocê pode enviar sugestões e reportar problemas para o email: \033[1;36mdevicewhite@proton.me"
-	sleep 1
-	
-	echo -e "\n\033[1;33m>> \033[1;37mFor more details, visit: \033[1;36mhttps://github.com/pawn-lang/compiler"
-	echo -e "\n\033[1;33m>> \033[1;37mPara mais detalhes, acesse: \033[1;36mhttps://github.com/pawn-lang/compiler"
-	sleep 1
-}
-
-alias pawncc='pawncc @$PREFIX/Termux-Pawn/pawn.cfg'
-
-if [ -w "$HOME/quick-install.sh" ]; then
-	rm $HOME/quick-install.sh
+if [ ! "$HOME" = "/data/data/com.termux/files/home" ]; then
+	echo -e "\033[1;31m      FAIL:    \033[0;37mYou are not using the Termux application!"
+	echo -e "\033[1;31m      ERRO:    \033[0;37mVocê não está usando o aplicativo Termux!"
+	exit 1
 fi
 
-echo -e "\n\033[1;33m>>>>>>>>>>>>>>>>>>> \033[1;31mTermux-Pawn:"
-echo -e "\n\033[1;33m>> \033[1;37mUse the command \033[1;36mtermux-pawn-help \033[1;37mto see help messages"
-echo -e "\n\033[1;33m>> \033[1;37mUtilize o comando \033[1;36mtermux-pawn-help \033[1;37mpara ver mensagens de ajuda"
-termux-pawn-check
+if [ ! "${1,,}" = "enus" ] && [ ! "${1,,}" = "ptbr" ]; then
+	echo -e "\033[1;31m      FAIL:    \033[0;37mYou need to indicate the language: \033[1;36mbash quick-install.sh enUS"
+	echo -e "\033[1;31m      ERRO:    \033[0;37mVocê precisa indicar o idioma: \033[1;36mbash quick-install.sh ptBR"
+	exit 1
+fi
+
+question=false
+while true; do
+	if [ ! -w "$EXTERNAL_STORAGE" ]; then
+		if [ "$question" = "false" ]; then
+			echo -e "\033[1;33m      INFO:    \033[0;37mYou need to allow access to external memory!!"
+			echo -e "\033[1;33m      INFO:    \033[0;37mVocê precisa permitir o acesso à memória externa!"
+			question=true
+			sleep 1
+		fi
+		
+		rm -rf $HOME/storage
+		termux-setup-storage
+	else
+		break
+	fi
+	
+	sleep 1
+done
+
+dpkg -r termux-pawn-enus termux-pawn-ptbr &> /dev/null
+machine=$(uname -m)
+
+case "$machine" in
+	"armv7l" | "armv8l" | "armhf")
+		wget -q --no-check-certificate "https://github.com/pawn-team/Termux-Pawn/releases/download/$machine/termux-pawn-${1,,}_3.10.10_arm.deb"
+		dpkg -i "termux-pawn-${1,,}_3.10.10_arm.deb" &> /dev/null
+		;;
+	
+	"aarch64")
+		wget -q --no-check-certificate "https://github.com/pawn-team/Termux-Pawn/releases/download/aarch64/termux-pawn-${1,,}_3.10.10_aarch64.deb"
+		dpkg -i "termux-pawn-${1,,}_3.10.10_aarch64.deb" &> /dev/null
+		;;
+	
+	*)
+		echo -e "\033[1;31m      FAIL:    \033[0;37mYour machine is not compatible!"
+		echo -e "\033[1;31m      ERRO:    \033[0;37mSua máquina não é compatível!"
+		exit 1
+		;;
+esac
+
+rm termux-pawn-*.deb
+
+mkdir -p $EXTERNAL_STORAGE/Termux-Pawn
+git clone -q https://github.com/pawn-lang/samp-stdlib
+git clone -q https://github.com/pawn-lang/pawn-stdlib
+mv samp-stdlib/*.inc $EXTERNAL_STORAGE/Termux-Pawn
+mv pawn-stdlib/*.inc $EXTERNAL_STORAGE/Termux-Pawn
+rm -rf samp-stdlib pawn-stdlib
+
+mkdir $PREFIX/Termux-Pawn
+echo "-i:${EXTERNAL_STORAGE}/Termux-Pawn -Z+ -;+ -\(+ -E+ -d3 -O0 -R+" > $PREFIX/Termux-Pawn/pawn.cfg
+
+commands=$(curl -s https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/termux-pawn.sh)
+echo "$commands" > $PREFIX/etc/profile.d/termux-pawn.sh
+
+clear
+echo -e "\n\033[1;33m>> \033[1;37mOpen the terminal again to update packages"
+echo -e "\n\033[1;33m>> \033[1;37mAbra o terminal novamente para atualizar os pacotes"
+bash -c "sleep 1 && kill -9 $PPID"
+exit 1
