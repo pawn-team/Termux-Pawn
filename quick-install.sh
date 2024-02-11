@@ -1,5 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+exit 0
+
 if [ ! "$HOME" = "/data/data/com.termux/files/home" ]; then
 	echo -e "\033[1;31m      FAIL:    \033[0;37mYou are not using the Termux application!"
 	echo -e "\033[1;31m      ERRO:    \033[0;37mVocê não está usando o aplicativo Termux!"
