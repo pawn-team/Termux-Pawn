@@ -12,7 +12,7 @@ function termux-pawn-remove {
 }
 
 function termux-pawn-check {
-	res=$(curl "https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/2024-02-11%2001%3A10%3A21%20BRT.txt")
+	res=$(curl -s "https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/2024-02-11%2001%3A10%3A21%20BRT.txt")
 	if [ "$res" = "updated" ]; then
 		echo -e "\n\033[1;33m>> \033[1;37mTermux-Pawn received an update, visit: \033[1;36mhttps://github.com/pawn-team/termux-pawn"
 		echo -e "\n\033[1;33m>> \033[1;37mO Termux-Pawn recebeu uma atualização, acesse: \033[1;36mhttps://github.com/pawn-team/termux-pawn"
