@@ -13,7 +13,7 @@ while true; do
 			echo -e "\033[1;33m      INFO:    \033[0;37mYou need to allow access to external memory!!"
 			echo -e "\033[1;33m      INFO:    \033[0;37mVocê precisa permitir o acesso à memória externa!"
 			question=true
-			sleep 3
+			sleep 1
 		fi
 		
 		rm -rf $HOME/storage
@@ -32,13 +32,13 @@ machine=$(uname -m)
 
 case "$machine" in
 	"armv7l" | "armv8l" | "armhf")
-		wget --no-check-certificate https://github.com/pawn-team/Termux-Pawn/releases/download/$machine/termux-pawn-$1_3.10.10_arm.deb
-		dpkg -i termux-pawn-$1_3.10.10_arm.deb
+		wget -q --no-check-certificate https://github.com/pawn-team/Termux-Pawn/releases/download/$machine/termux-pawn-$1_3.10.10_arm.deb
+		dpkg -i termux-pawn-$1_3.10.10_arm.deb &> /dev/null
 		;;
 	
 	"aarch64")
-		wget --no-check-certificate https://github.com/pawn-team/Termux-Pawn/releases/download/aarch64/termux-pawn-$1_3.10.10_aarch64.deb
-		dpkg -i termux-pawn-$1_3.10.10_aarch64.deb
+		wget -q --no-check-certificate https://github.com/pawn-team/Termux-Pawn/releases/download/aarch64/termux-pawn-$1_3.10.10_aarch64.deb
+		dpkg -i termux-pawn-$1_3.10.10_aarch64.deb &> /dev/null
 		;;
 	
 	*)
@@ -49,8 +49,8 @@ case "$machine" in
 esac
 
 mkdir -p $EXTERNAL_STORAGE/Termux-Pawn
-git clone https://github.com/pawn-lang/samp-stdlib
-git clone https://github.com/pawn-lang/pawn-stdlib
+git clone -q https://github.com/pawn-lang/samp-stdlib
+git clone -q https://github.com/pawn-lang/pawn-stdlib
 mv samp-stdlib/*.inc $EXTERNAL_STORAGE/Termux-Pawn
 mv pawn-stdlib/*.inc $EXTERNAL_STORAGE/Termux-Pawn
 rm -rf samp-stdlib pawn-stdlib
@@ -58,12 +58,10 @@ rm -rf samp-stdlib pawn-stdlib
 mkdir $PREFIX/Termux-Pawn
 echo "-Z+ -;+ -(+ -E+ -d3 -O0 -R+" > $PREFIX/Termux-Pawn/pawn.cfg
 
-commands=$(curl https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/termux-pawn.sh)
+commands=$(curl -s https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/termux-pawn.sh)
 echo "$commands" > $PREFIX/etc/profile.d/termux-pawn.sh
 
 clear
-echo -e "\n\033[1;33m>> \033[1;37mUse the command \033[1;36mtermux-pawn-help \033[1;37mto see help messages"
-echo -e "\n\033[1;33m>> \033[1;37mUtilize o comando \033[1;36mtermux-pawn-help \033[1;37mpara ver mensagens de ajuda"
-bash -c "sleep 1 && kill -9 $PPID"
-
-exit 0
+echo -e "\n\033[1;33m>> \033[1;37mOpen the terminal again to update packages"
+echo -e "\n\033[1;33m>> \033[1;37mAbra o terminal novamente para atualizar os pacotes"
+bash -c "sleep 1 && kill -9 $PPID" & exit
