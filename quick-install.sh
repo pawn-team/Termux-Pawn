@@ -33,11 +33,13 @@ machine=$(uname -m)
 case "$machine" in
 	"armv7l" | "armv8l" | "armhf")
 		wget -q --no-check-certificate https://github.com/pawn-team/Termux-Pawn/releases/download/$machine/termux-pawn-$1_3.10.10_arm.deb
+		termux-pawn-remove &> /dev/null
 		dpkg -i termux-pawn-$1_3.10.10_arm.deb &> /dev/null
 		;;
 	
 	"aarch64")
 		wget -q --no-check-certificate https://github.com/pawn-team/Termux-Pawn/releases/download/aarch64/termux-pawn-$1_3.10.10_aarch64.deb
+		termux-pawn-remove &> /dev/null
 		dpkg -i termux-pawn-$1_3.10.10_aarch64.deb &> /dev/null
 		;;
 	
