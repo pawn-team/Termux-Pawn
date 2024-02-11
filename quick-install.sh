@@ -6,6 +6,12 @@ if [ ! "$HOME" = "/data/data/com.termux/files/home" ]; then
 	exit 1
 fi
 
+if [ ! "${1,,}" = "enus" ] && [ ! "${1,,}" = "ptbr" ]; then
+	echo -e "\033[1;31m      FAIL:    \033[0;37mYou need to indicate the language: \033[1;36mbash quick-install.sh ptbr"
+	echo -e "\033[1;31m      ERRO:    \033[0;37mVocê precisa indicar o idioma: \033[1;36mbash quick-install.sh ptbr"
+	exit 1
+fi
+
 question=false
 while true; do
 	if [ ! -w "$EXTERNAL_STORAGE" ]; then
@@ -33,13 +39,13 @@ machine=$(uname -m)
 
 case "$machine" in
 	"armv7l" | "armv8l" | "armhf")
-		wget -q --no-check-certificate https://github.com/pawn-team/Termux-Pawn/releases/download/$machine/termux-pawn-$1_3.10.10_arm.deb
-		dpkg -i termux-pawn-$1_3.10.10_arm.deb &> /dev/null
+		wget -q --no-check-certificate "https://github.com/pawn-team/Termux-Pawn/releases/download/$machine/termux-pawn-${1,,}_3.10.10_arm.deb"
+		dpkg -i "termux-pawn-${1,,}_3.10.10_arm.deb" &> /dev/null
 		;;
 	
 	"aarch64")
-		wget -q --no-check-certificate https://github.com/pawn-team/Termux-Pawn/releases/download/aarch64/termux-pawn-$1_3.10.10_aarch64.deb
-		dpkg -i termux-pawn-$1_3.10.10_aarch64.deb &> /dev/null
+		wget -q --no-check-certificate "https://github.com/pawn-team/Termux-Pawn/releases/download/aarch64/termux-pawn-${1,,}_3.10.10_aarch64.deb"
+		dpkg -i "termux-pawn-${1,,}_3.10.10_aarch64.deb" &> /dev/null
 		;;
 	
 	*)
