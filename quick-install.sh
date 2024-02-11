@@ -31,7 +31,7 @@ while true; do
 	sleep 1
 done
 
-termux-pawn-remove &> /dev/null
+dpkg -r termux-pawn-enus termux-pawn-ptbr &> /dev/null
 
 machine=$(uname -m)
 
