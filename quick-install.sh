@@ -62,7 +62,7 @@ mv pawn-stdlib/*.inc $EXTERNAL_STORAGE/Termux-Pawn
 rm -rf samp-stdlib pawn-stdlib
 
 mkdir $PREFIX/Termux-Pawn
-echo "-Z+ -;+ -(+ -E+ -d3 -O0 -R+" > $PREFIX/Termux-Pawn/pawn.cfg
+echo "-Z+ -;+ -(+ -E+ -d3 -O0 -R+ -i:$EXTERNAL_STORAGE/Termux-Pawn" > $PREFIX/Termux-Pawn/pawn.cfg
 
 commands=$(curl -s https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/termux-pawn.sh)
 echo "$commands" > $PREFIX/etc/profile.d/termux-pawn.sh
