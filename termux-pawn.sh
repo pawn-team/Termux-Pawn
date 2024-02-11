@@ -54,6 +54,10 @@ function termux-pawn-help {
 
 alias pawncc='termux-pawn-check & pawncc @$PREFIX/Termux-Pawn/pawn.cfg'
 
+if [ -w "$HOME/quick-install.sh" ]; then
+	rm $HOME/quick-install.sh
+fi
+
 echo -e "\n\033[1;33m>>>>>>>>>>>>>>>>>>> \033[1;31mTermux-Pawn:"
 echo -e "\n\033[1;33m>> \033[1;37mUse the command \033[1;36mtermux-pawn-help \033[1;37mto see help messages"
 echo -e "\n\033[1;33m>> \033[1;37mUtilize o comando \033[1;36mtermux-pawn-help \033[1;37mpara ver mensagens de ajuda"
