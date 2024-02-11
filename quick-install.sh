@@ -32,7 +32,6 @@ while true; do
 done
 
 dpkg -r termux-pawn-enus termux-pawn-ptbr &> /dev/null
-
 machine=$(uname -m)
 
 case "$machine" in
