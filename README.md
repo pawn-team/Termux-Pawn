@@ -35,7 +35,7 @@ bash quick-install.sh ptBR
 > [!Warning]
 > [Instale o Termux aqui](https://f-droid.org/repo/com.termux_118.apk) <br/>
 
-**Tutorial em Video (Desatualizado):**
+**Tutorial em Video (Atualizado):**
 [![Video Tutorial](https://i.ibb.co/tqVTpq5/20240130-193938.jpg)](https://youtu.be/DzKnOgNabJ4 "Termux Pawn: Compilador traduzido em PTBR!")
 
 ---
