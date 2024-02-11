@@ -2,6 +2,7 @@
 > [!Note]
 > Method by DeviceWhite and BeerlID
 > Updated on: 2024/02/11 02:43:37 BRT
+
 ### Português
 
 **Instruções de Instalação:**
