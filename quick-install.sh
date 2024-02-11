@@ -7,8 +7,8 @@ if [ ! "$HOME" = "/data/data/com.termux/files/home" ]; then
 fi
 
 if [ ! "${1,,}" = "enus" ] && [ ! "${1,,}" = "ptbr" ]; then
-	echo -e "\033[1;31m      FAIL:    \033[0;37mYou need to indicate the language: \033[1;36mbash quick-install.sh ptbr"
-	echo -e "\033[1;31m      ERRO:    \033[0;37mVocê precisa indicar o idioma: \033[1;36mbash quick-install.sh ptbr"
+	echo -e "\033[1;31m      FAIL:    \033[0;37mYou need to indicate the language: \033[1;36mbash quick-install.sh enUS"
+	echo -e "\033[1;31m      ERRO:    \033[0;37mVocê precisa indicar o idioma: \033[1;36mbash quick-install.sh ptBR
 	exit 1
 fi
 
