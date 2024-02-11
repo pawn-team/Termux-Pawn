@@ -31,8 +31,6 @@ while true; do
 	sleep 1
 done
 
-yes | pkg upd -y && yes | pkg upg -y
-pkg install -y git wget
 termux-pawn-remove &> /dev/null
 
 machine=$(uname -m)
