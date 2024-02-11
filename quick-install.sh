@@ -49,6 +49,8 @@ case "$machine" in
 		;;
 esac
 
+rm termux-pawn-*.deb
+
 mkdir -p $EXTERNAL_STORAGE/Termux-Pawn
 git clone -q https://github.com/pawn-lang/samp-stdlib
 git clone -q https://github.com/pawn-lang/pawn-stdlib
