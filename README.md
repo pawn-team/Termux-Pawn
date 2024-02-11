@@ -1,7 +1,7 @@
 # Pawn Compiler for Termux
 > [!Note]
 > Method by DeviceWhite and BeerlID
-> Updated on: fev 05, 2024 23:43:19 BRT
+> Updated on: 2024/02/11 02:43:37 BRT
 ### Português
 
 **Instruções de Instalação:**
@@ -9,7 +9,14 @@
 Para instalar o compilador Pawn no Termux, execute o seguinte comando no terminal:
 
 ```bash
-wget https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-install-ptbr.sh && bash quick-install-ptbr.sh && rm quick-install-ptbr.sh && exit 1
+# Atualizar os pacotes atuais e instalar novos pacotes
+yes | pkg upd -y && yes | pkg upg -y && pkg i -y wget git
+
+# Baixar o script de instalaçao rapida
+wget https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-install.sh
+
+# Executar o script e instalaar o compilador
+bash quick-install.sh ptBR
 ```
 
 | binários | armhf | armv7l | armv8l | aarch64 |
@@ -26,13 +33,8 @@ wget https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-i
 
 > [!Warning]
 > [Instale o Termux aqui](https://f-droid.org/repo/com.termux_118.apk) <br/>
-> Antes de instalar o compilador, certifique-se de atualizar os pacotes:
->
-> ```bash
-> yes | pkg upd -y && yes | pkg upg -y
-> ```
 
-**Tutorial em Video:**
+**Tutorial em Video (Desatualizado):**
 [![Video Tutorial](https://i.ibb.co/tqVTpq5/20240130-193938.jpg)](http://www.youtube.com/watch?v=GKRI3ec9z2Y "Termux Pawn: Compilador traduzido em PTBR!")
 
 ---
@@ -44,7 +46,14 @@ wget https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-i
 To install the Pawn compiler on Termux, run the following command in the terminal:
 
 ```bash
-wget https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-install-enus.sh && bash quick-install-enus.sh && rm quick-install-enus.sh && exit 1
+# Update current packages and install new packages
+yes | pkg upd -y && yes | pkg upg -y && pkg i -y wget git
+
+# Download the quick installation script
+wget https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-install.sh
+
+# Run the script and install the compiler
+bash quick-install.sh enUS
 ```
 
 | binaries | armhf | armv7l | armv8l | aarch64 |
