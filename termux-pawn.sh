@@ -52,7 +52,7 @@ function termux-pawn-help {
 	sleep 1
 }
 
-alias pawncc='termux-pawn-check & pawncc @$PREFIX/Termux-Pawn/pawn.cfg'
+alias pawncc='pawncc @$PREFIX/Termux-Pawn/pawn.cfg'
 
 if [ -w "$HOME/quick-install.sh" ]; then
 	rm $HOME/quick-install.sh
