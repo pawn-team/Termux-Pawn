@@ -11,8 +11,9 @@ Para instalar o compilador Pawn no Termux, execute o seguinte comando no termina
 
 ```bash
 # Atualizar os pacotes atuais e instalar novos pacotes
-yes | pkg upd -y && yes | pkg upg -y
-pkg i -y wget git
+yes | pkg update -y
+yes | pkg upgrade -y
+pkg install -y wget git
 
 # Baixar o script de instalaçao rapida
 wget https://raw.githubusercontent.com/pawn-team/Termux-Pawn/DeviceWhite/quick-install.sh
